@@ -1,0 +1,181 @@
+#VRML V2.0 utf8
+
+Transform {
+children[
+Viewpoint {
+position 2.244076 -1.095618 3.262459 
+orientation 0.787122 0.185828 0.588139 0.763444
+description "POV"
+}
+NavigationInfo {
+speed 0.5
+type "EXAMINE"
+}
+Background {
+ skyColor [ 0.082031 0.136719 0.250000 ]
+}
+]
+}
+Transform {
+scale 1000 1000 1000
+children [
+Transform {
+children [
+DEF simple_robot Transform {
+translation 0.000000 0.000000 0.000000 
+rotation 0 0 1 0
+children [
+DEF simple_robot-wall Transform {
+translation 0.625500 0.159000 0.000000 
+rotation 0 0 1 0
+children [
+DEF simple_robot-wall-bo5 Transform {
+translation 1.653180 -0.249935 0.000000 
+rotation 0 0 1 0
+children [
+Shape {
+geometry IndexedFaceSet {
+coord Coordinate {
+point[
+     -1.000000 -0.100000 0.000000,
+     1.000000 -0.100000 0.000000,
+     1.000000 0.100000 0.000000,
+     -1.000000 0.100000 0.000000,
+     -1.000000 -0.100000 2.000000,
+     1.000000 -0.100000 2.000000,
+     1.000000 0.100000 2.000000,
+     -1.000000 0.100000 2.000000,
+]
+}
+convex TRUE
+creaseAngle 0.7
+solid TRUE
+coordIndex [
+0, 3, 2, 1, -1,
+1, 5, 4, 0, -1,
+4, 7, 3, 0, -1,
+7, 6, 2, 3, -1,
+6, 5, 1, 2, -1,
+6, 7, 4, 5, -1,
+]
+}
+appearance DEF Cyan Appearance {
+ material
+Material {
+   diffuseColor 0.100000 0.500000 0.500000
+ambientIntensity 0.2}
+}
+}
+]
+}
+]
+}
+DEF simple_robot-arcmate_120 Transform {
+translation 0.000000 0.000000 0.000000 
+rotation 0 0 1 0
+children [
+DEF simple_robot-arcmate_120-two_d Transform {
+translation 0.000000 0.000000 0.000000 
+rotation 0 0 1 0
+children [
+]
+}
+DEF simple_robot-arcmate_120-kbase Transform {
+translation 0.000000 0.000000 0.000000 
+rotation 0 0 1 0
+children [
+DEF simple_robot-arcmate_120-k1 Transform {
+translation 0.150712 0.142633 0.325292 
+rotation 0.000000 0.000000 1.000000 0.750635
+children [
+DEF simple_robot-arcmate_120-k2 Transform {
+translation 0.096728 1.463500 0.801306 
+rotation 0.941704 0.237900 -0.237900 1.630824
+children [
+DEF simple_robot-arcmate_120-k3 Transform {
+translation 0.136365 0.179066 1.458808 
+rotation 0.946475 0.322778 -0.000000 3.141593
+children [
+DEF simple_robot-arcmate_120-k4 Transform {
+translation 0.204000 0.002536 -0.006169 
+rotation -0.705747 0.060695 -0.705859 3.020128
+children [
+DEF simple_robot-arcmate_120-k5 Transform {
+translation -0.000020 -0.053036 0.465076 
+rotation -0.288686 -0.677001 -0.677001 2.579503
+children [
+DEF simple_robot-arcmate_120-k6 Transform {
+translation 0.080497 -0.000090 0.053151 
+rotation -0.617556 0.486867 -0.617725 2.235420
+children [
+DEF simple_robot-arcmate_120-TOOLFRAME Transform {
+translation -0.000000 0.000122 0.019514 
+rotation 0.000000 0.000000 -1.000000 1.570796
+children [
+DEF simple_robot-gun Transform {
+translation 0.000000 0.000000 0.000000 
+rotation 0 0 1 0
+children [
+DEF simple_robot-gun-k3 Transform {
+translation -6.465087 2.766500 6.781717 
+rotation 0.862856 -0.357407 0.357407 1.717771
+children [
+DEF simple_robot-gun-main Transform {
+translation 0.000001 0.000004 -0.000001 
+rotation 0 0 1 0
+children [
+]
+}
+DEF simple_robot-gun-balance Transform {
+translation 0.000008 0.000014 -0.000000 
+rotation 0 0 1 0
+children [
+]
+}
+]
+}
+DEF simple_robot-gun-cp2 Transform {
+translation 0.180000 0.000000 0.508000 
+rotation 0 0 1 0
+children [
+]
+}
+]
+}
+]
+}
+]
+}
+]
+}
+]
+}
+]
+}
+]
+}
+]
+}
+]
+}
+DEF simple_robot-arcmate_120-BASEFRAME Transform {
+translation 0.000000 0.000000 0.450000 
+rotation 0 0 1 0
+children [
+]
+}
+]
+}
+DEF simple_robot-collision_setup Transform {
+translation 0.000000 0.000000 0.000000 
+rotation 0 0 1 0
+children [
+]
+}
+]
+}
+]
+
+}
+]
+}

@@ -1,0 +1,1749 @@
+#VRML V2.0 utf8
+
+# Produced by 3D Studio MAX VRML97 exporter, Version 6, Revision 0,56
+# Date: Tue Oct 11 17:17:03 2005
+
+DEF V2Grp01 Transform {
+  translation 0 0 0
+  children [
+    DEF Universe01 Transform {
+      translation 0 0 0
+      children [
+        DEF World01 Transform {
+          translation 0 0 0
+          children [
+            DEF RobotG01 Transform {
+              translation 0 0 0
+              children [
+                DEF Body01 Transform {
+                  translation 0 0 0
+                  children [
+                    DEF bmrobarm01 Transform {
+                      translation 0 764 0
+                      children [
+                        DEF VIFS01 Transform {
+                          translation 0 0 0
+                          children [
+                            Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.1 0.48 0.42
+                                  ambientIntensity 0.3
+                                  specularColor 0 0 0
+                                  shininess 0.06615
+                                  transparency 0
+                                }
+                              }
+                              geometry DEF VIFS01-FACES IndexedFaceSet {
+                                ccw TRUE
+                                solid FALSE
+                                coord DEF VIFS01-COORD Coordinate { point [
+                                  -75 0 0, -64.95 0 -37.5, -37.5 0 -64.95, 
+                                  0 0 -75, 37.5 0 -64.95, 64.95 0 -37.5, 
+                                  75 0 0, 64.95 0 37.5, 37.5 0 64.95, 
+                                  0 0 75, -37.5 0 64.95, -64.95 0 37.5, 
+                                  -75 255 0, -64.95 255 -37.5, 
+                                  -37.5 255 -64.95, 0 255 -75, 
+                                  37.5 255 -64.95, 64.95 255 -37.5, 
+                                  75 255 0, 64.95 255 37.5, 37.5 255 64.95, 
+                                  0 255 75, -37.5 255 64.95, 
+                                  -64.95 255 37.5]
+                                }
+                                coordIndex [
+                                  0, 1, 2, -1, 2, 3, 0, -1, 0, 3, 4, -1, 
+                                  4, 5, 0, -1, 0, 5, 6, -1, 6, 7, 0, -1, 
+                                  0, 7, 8, -1, 8, 9, 0, -1, 0, 9, 10, -1, 
+                                  10, 11, 0, -1, 1, 0, 12, -1, 
+                                  12, 13, 1, -1, 2, 1, 13, -1, 
+                                  13, 14, 2, -1, 3, 2, 14, -1, 
+                                  14, 15, 3, -1, 4, 3, 15, -1, 
+                                  15, 16, 4, -1, 5, 4, 16, -1, 
+                                  16, 17, 5, -1, 6, 5, 17, -1, 
+                                  17, 18, 6, -1, 7, 6, 18, -1, 
+                                  18, 19, 7, -1, 8, 7, 19, -1, 
+                                  19, 20, 8, -1, 9, 8, 20, -1, 
+                                  20, 21, 9, -1, 10, 9, 21, -1, 
+                                  21, 22, 10, -1, 11, 10, 22, -1, 
+                                  22, 23, 11, -1, 0, 11, 23, -1, 
+                                  23, 12, 0, -1, 23, 22, 21, -1, 
+                                  21, 20, 23, -1, 23, 20, 19, -1, 
+                                  19, 18, 23, -1, 23, 18, 17, -1, 
+                                  17, 16, 23, -1, 23, 16, 15, -1, 
+                                  15, 14, 23, -1, 23, 14, 13, -1, 
+                                  13, 12, 23, -1]
+                                }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    DEF bmrobarm02 Transform {
+                      translation 0 1019 -6e-005
+                      children [
+                        DEF VIFS02 Transform {
+                          translation 0 0 0
+                          children [
+                            Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.1 0.48 0.42
+                                  ambientIntensity 0.3
+                                  specularColor 0 0 0
+                                  shininess 0.06615
+                                  transparency 0
+                                }
+                              }
+                              geometry DEF VIFS02-FACES IndexedFaceSet {
+                                ccw TRUE
+                                solid FALSE
+                                coord DEF VIFS02-COORD Coordinate { point [
+                                  -60 0 0, -51.96 0 -30, -30 0 -51.96, 
+                                  0 0 -60, 30 0 -51.96, 51.96 0 -30, 
+                                  60 0 0, 51.96 0 30, 30 0 51.96, 
+                                  0 0 60, -30 0 51.96, -51.96 0 30, 
+                                  -60 50 0, -51.96 50 -30, -30 50 -51.96, 
+                                  0 50 -60, 30 50 -51.96, 51.96 50 -30, 
+                                  60 50 0, 51.96 50 30, 30 50 51.96, 
+                                  0 50 60, -30 50 51.96, -51.96 50 30]
+                                }
+                                coordIndex [
+                                  0, 1, 2, -1, 2, 3, 0, -1, 0, 3, 4, -1, 
+                                  4, 5, 0, -1, 0, 5, 6, -1, 6, 7, 0, -1, 
+                                  0, 7, 8, -1, 8, 9, 0, -1, 0, 9, 10, -1, 
+                                  10, 11, 0, -1, 1, 0, 12, -1, 
+                                  12, 13, 1, -1, 2, 1, 13, -1, 
+                                  13, 14, 2, -1, 3, 2, 14, -1, 
+                                  14, 15, 3, -1, 4, 3, 15, -1, 
+                                  15, 16, 4, -1, 5, 4, 16, -1, 
+                                  16, 17, 5, -1, 6, 5, 17, -1, 
+                                  17, 18, 6, -1, 7, 6, 18, -1, 
+                                  18, 19, 7, -1, 8, 7, 19, -1, 
+                                  19, 20, 8, -1, 9, 8, 20, -1, 
+                                  20, 21, 9, -1, 10, 9, 21, -1, 
+                                  21, 22, 10, -1, 11, 10, 22, -1, 
+                                  22, 23, 11, -1, 0, 11, 23, -1, 
+                                  23, 12, 0, -1, 23, 22, 21, -1, 
+                                  21, 20, 23, -1, 23, 20, 19, -1, 
+                                  19, 18, 23, -1, 23, 18, 17, -1, 
+                                  17, 16, 23, -1, 23, 16, 15, -1, 
+                                  15, 14, 23, -1, 23, 14, 13, -1, 
+                                  13, 12, 23, -1]
+                                }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    DEF bmrobarm03 Transform {
+                      translation 0 1069 -6e-005
+                      children [
+                        DEF VIFS03 Transform {
+                          translation 0 0 0
+                          children [
+                            Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.1 0.48 0.42
+                                  ambientIntensity 0.3
+                                  specularColor 0 0 0
+                                  shininess 0.06615
+                                  transparency 0
+                                }
+                              }
+                              geometry DEF VIFS03-FACES IndexedFaceSet {
+                                ccw TRUE
+                                solid FALSE
+                                coord DEF VIFS03-COORD Coordinate { point [
+                                  -75 0 45, -75 0 -45, 75 0 -45, 
+                                  75 0 45, 75 179.5 45, -75 179.5 45, 
+                                  -75 179.5 -45, 75 179.5 -45]
+                                }
+                                coordIndex [
+                                  0, 1, 2, -1, 2, 3, 0, -1, 3, 4, 5, -1, 
+                                  5, 0, 3, -1, 5, 6, 1, -1, 1, 0, 5, -1, 
+                                  6, 7, 2, -1, 2, 1, 6, -1, 7, 4, 3, -1, 
+                                  3, 2, 7, -1, 7, 6, 5, -1, 5, 4, 7, -1]
+                                }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    DEF Body02 Transform {
+                      translation 0 1179 -110
+                      children [
+                        DEF bmrobarm04 Transform {
+                          translation 0 0 25
+                          rotation -1 0 0 -1.571
+                          children [
+                            DEF VIFS04 Transform {
+                              translation 0 0 0
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                      diffuseColor 0.1 0.48 0.42
+                                      ambientIntensity 0.3
+                                      specularColor 0 0 0
+                                      shininess 0.06615
+                                      transparency 0
+                                    }
+                                  }
+                                  geometry DEF VIFS04-FACES IndexedFaceSet {
+                                    ccw TRUE
+                                    solid TRUE
+                                    coord DEF VIFS04-COORD Coordinate { point [
+                                      -60 0 0, -51.96 0 -30, -30 0 -51.96, 
+                                      0 0 -60, 30 0 -51.96, 51.96 0 -30, 
+                                      60 0 0, 51.96 0 30, 30 0 51.96, 
+                                      0 0 60, -30 0 51.96, -51.96 0 30, 
+                                      -60 40 0, -51.96 40 -30, 
+                                      -30 40 -51.96, 0 40 -60, 
+                                      30 40 -51.96, 51.96 40 -30, 
+                                      60 40 0, 51.96 40 30, 30 40 51.96, 
+                                      0 40 60, -30 40 51.96, 
+                                      -51.96 40 30]
+                                    }
+                                    coordIndex [
+                                      0, 1, 2, -1, 2, 3, 0, -1, 
+                                      0, 3, 4, -1, 4, 5, 0, -1, 
+                                      0, 5, 6, -1, 6, 7, 0, -1, 
+                                      0, 7, 8, -1, 8, 9, 0, -1, 
+                                      0, 9, 10, -1, 10, 11, 0, -1, 
+                                      1, 0, 12, -1, 12, 13, 1, -1, 
+                                      2, 1, 13, -1, 13, 14, 2, -1, 
+                                      3, 2, 14, -1, 14, 15, 3, -1, 
+                                      4, 3, 15, -1, 15, 16, 4, -1, 
+                                      5, 4, 16, -1, 16, 17, 5, -1, 
+                                      6, 5, 17, -1, 17, 18, 6, -1, 
+                                      7, 6, 18, -1, 18, 19, 7, -1, 
+                                      8, 7, 19, -1, 19, 20, 8, -1, 
+                                      9, 8, 20, -1, 20, 21, 9, -1, 
+                                      10, 9, 21, -1, 21, 22, 10, -1, 
+                                      11, 10, 22, -1, 22, 23, 11, -1, 
+                                      0, 11, 23, -1, 23, 12, 0, -1, 
+                                      23, 22, 21, -1, 21, 20, 23, -1, 
+                                      23, 20, 19, -1, 19, 18, 23, -1, 
+                                      23, 18, 17, -1, 17, 16, 23, -1, 
+                                      23, 16, 15, -1, 15, 14, 23, -1, 
+                                      23, 14, 13, -1, 13, 12, 23, -1]
+                                    }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        DEF bmrobarm05 Transform {
+                          translation 0 -265 -25
+                          children [
+                            DEF VIFS05 Transform {
+                              translation 0 0 0
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                      diffuseColor 0.1 0.48 0.42
+                                      ambientIntensity 0.3
+                                      specularColor 0 0 0
+                                      shininess 0.06615
+                                      transparency 0
+                                    }
+                                  }
+                                  geometry DEF VIFS05-FACES IndexedFaceSet {
+                                    ccw TRUE
+                                    solid FALSE
+                                    coord DEF VIFS05-COORD Coordinate { point [
+                                      -70 0 25, -70 0 -25, 70 0 -25, 
+                                      70 0 25, 70 730 25, -70 730 25, 
+                                      -70 730 -25, 70 730 -25]
+                                    }
+                                    coordIndex [
+                                      0, 1, 2, -1, 2, 3, 0, -1, 
+                                      3, 4, 5, -1, 5, 0, 3, -1, 
+                                      5, 6, 1, -1, 1, 0, 5, -1, 
+                                      6, 7, 2, -1, 2, 1, 6, -1, 
+                                      7, 4, 3, -1, 3, 2, 7, -1, 
+                                      7, 6, 5, -1, 5, 4, 7, -1]
+                                    }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        DEF bmrobarm06 Transform {
+                          translation 0 -265 7.4
+                          children [
+                            DEF VIFS06 Transform {
+                              translation 0 0 0
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                      diffuseColor 0.1 0.48 0.42
+                                      ambientIntensity 0.3
+                                      specularColor 0 0 0
+                                      shininess 0.06615
+                                      transparency 0
+                                    }
+                                  }
+                                  geometry DEF VIFS06-FACES IndexedFaceSet {
+                                    ccw TRUE
+                                    solid FALSE
+                                    coord DEF VIFS06-COORD Coordinate { point [
+                                      -70 0 14.7, -70 0 -14.7, 
+                                      70 0 -14.7, 70 0 14.7, 
+                                      70 730 14.7, -70 730 14.7, 
+                                      -70 730 -14.7, 70 730 -14.7]
+                                    }
+                                    coordIndex [
+                                      0, 1, 2, -1, 2, 3, 0, -1, 
+                                      3, 4, 5, -1, 5, 0, 3, -1, 
+                                      5, 6, 1, -1, 1, 0, 5, -1, 
+                                      6, 7, 2, -1, 2, 1, 6, -1, 
+                                      7, 4, 3, -1, 3, 2, 7, -1, 
+                                      7, 6, 5, -1, 5, 4, 7, -1]
+                                    }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        DEF bmrobarm07 Transform {
+                          translation 0 -265 0
+                          rotation 1 0 0 -1.571
+                          children [
+                            DEF VIFS07 Transform {
+                              translation 0 0 1.792e-005
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                      diffuseColor 0.1 0.48 0.42
+                                      ambientIntensity 0.3
+                                      specularColor 0 0 0
+                                      shininess 0.06615
+                                      transparency 0
+                                    }
+                                  }
+                                  geometry DEF VIFS07-FACES IndexedFaceSet {
+                                    ccw TRUE
+                                    solid FALSE
+                                    coord DEF VIFS07-COORD Coordinate { point [
+                                      -70 0 0, -60.62 0 -35, -35 0 -60.62, 
+                                      0 0 -70, 35 0 -60.62, 60.62 0 -35, 
+                                      70 0 0, 60.62 0 35, 35 0 60.62, 
+                                      0 0 70, -35 0 60.62, -60.62 0 35, 
+                                      -70 100 0, -60.62 100 -35, 
+                                      -35 100 -60.62, 0 100 -70, 
+                                      35 100 -60.62, 60.62 100 -35, 
+                                      70 100 0, 60.62 100 35, 
+                                      35 100 60.62, 0 100 70, 
+                                      -35 100 60.62, -60.62 100 35]
+                                    }
+                                    coordIndex [
+                                      0, 1, 2, -1, 2, 3, 0, -1, 
+                                      0, 3, 4, -1, 4, 5, 0, -1, 
+                                      0, 5, 6, -1, 6, 7, 0, -1, 
+                                      0, 7, 8, -1, 8, 9, 0, -1, 
+                                      0, 9, 10, -1, 10, 11, 0, -1, 
+                                      1, 0, 12, -1, 12, 13, 1, -1, 
+                                      2, 1, 13, -1, 13, 14, 2, -1, 
+                                      3, 2, 14, -1, 14, 15, 3, -1, 
+                                      4, 3, 15, -1, 15, 16, 4, -1, 
+                                      5, 4, 16, -1, 16, 17, 5, -1, 
+                                      6, 5, 17, -1, 17, 18, 6, -1, 
+                                      7, 6, 18, -1, 18, 19, 7, -1, 
+                                      8, 7, 19, -1, 19, 20, 8, -1, 
+                                      9, 8, 20, -1, 20, 21, 9, -1, 
+                                      10, 9, 21, -1, 21, 22, 10, -1, 
+                                      11, 10, 22, -1, 22, 23, 11, -1, 
+                                      0, 11, 23, -1, 23, 12, 0, -1, 
+                                      23, 22, 21, -1, 21, 20, 23, -1, 
+                                      23, 20, 19, -1, 19, 18, 23, -1, 
+                                      23, 18, 17, -1, 17, 16, 23, -1, 
+                                      23, 16, 15, -1, 15, 14, 23, -1, 
+                                      23, 14, 13, -1, 13, 12, 23, -1]
+                                    }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        DEF bmrobarm08 Transform {
+                          translation 0 -265 29.4
+                          rotation 1 0 0 -1.571
+                          children [
+                            DEF VIFS08 Transform {
+                              translation 0 0 1.313e-005
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                      diffuseColor 0.1 0.48 0.42
+                                      ambientIntensity 0.3
+                                      specularColor 0 0 0
+                                      shininess 0.06615
+                                      transparency 0
+                                    }
+                                  }
+                                  geometry DEF VIFS08-FACES IndexedFaceSet {
+                                    ccw TRUE
+                                    solid FALSE
+                                    coord DEF VIFS08-COORD Coordinate { point [
+                                      -70 0 0, -60.62 0 -35, -35 0 -60.62, 
+                                      0 0 -70, 35 0 -60.62, 60.62 0 -35, 
+                                      70 0 0, 60.62 0 35, 35 0 60.62, 
+                                      0 0 70, -35 0 60.62, -60.62 0 35, 
+                                      -70 29.4 0, -60.62 29.4 -35, 
+                                      -35 29.4 -60.62, 0 29.4 -70, 
+                                      35 29.4 -60.62, 60.62 29.4 -35, 
+                                      70 29.4 0, 60.62 29.4 35, 
+                                      35 29.4 60.62, 0 29.4 70, 
+                                      -35 29.4 60.62, -60.62 29.4 35]
+                                    }
+                                    coordIndex [
+                                      0, 1, 2, -1, 2, 3, 0, -1, 
+                                      0, 3, 4, -1, 4, 5, 0, -1, 
+                                      0, 5, 6, -1, 6, 7, 0, -1, 
+                                      0, 7, 8, -1, 8, 9, 0, -1, 
+                                      0, 9, 10, -1, 10, 11, 0, -1, 
+                                      1, 0, 12, -1, 12, 13, 1, -1, 
+                                      2, 1, 13, -1, 13, 14, 2, -1, 
+                                      3, 2, 14, -1, 14, 15, 3, -1, 
+                                      4, 3, 15, -1, 15, 16, 4, -1, 
+                                      5, 4, 16, -1, 16, 17, 5, -1, 
+                                      6, 5, 17, -1, 17, 18, 6, -1, 
+                                      7, 6, 18, -1, 18, 19, 7, -1, 
+                                      8, 7, 19, -1, 19, 20, 8, -1, 
+                                      9, 8, 20, -1, 20, 21, 9, -1, 
+                                      10, 9, 21, -1, 21, 22, 10, -1, 
+                                      11, 10, 22, -1, 22, 23, 11, -1, 
+                                      0, 11, 23, -1, 23, 12, 0, -1, 
+                                      23, 22, 21, -1, 21, 20, 23, -1, 
+                                      23, 20, 19, -1, 19, 18, 23, -1, 
+                                      23, 18, 17, -1, 17, 16, 23, -1, 
+                                      23, 16, 15, -1, 15, 14, 23, -1, 
+                                      23, 14, 13, -1, 13, 12, 23, -1]
+                                    }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        DEF bmrobarm09 Transform {
+                          translation 0 475 0
+                          rotation 1 0 0 -1.571
+                          children [
+                            DEF VIFS09 Transform {
+                              translation 0 0 1.792e-005
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                      diffuseColor 0.1 0.48 0.42
+                                      ambientIntensity 0.3
+                                      specularColor 0 0 0
+                                      shininess 0.06615
+                                      transparency 0
+                                    }
+                                  }
+                                  geometry DEF VIFS09-FACES IndexedFaceSet {
+                                    ccw TRUE
+                                    solid FALSE
+                                    coord DEF VIFS09-COORD Coordinate { point [
+                                      -70 0 0, -60.62 0 -35, -35 0 -60.62, 
+                                      0 0 -70, 35 0 -60.62, 60.62 0 -35, 
+                                      70 0 0, 60.62 0 35, 35 0 60.62, 
+                                      0 0 70, -35 0 60.62, -60.62 0 35, 
+                                      -70 50 0, -60.62 50 -35, 
+                                      -35 50 -60.62, 0 50 -70, 
+                                      35 50 -60.62, 60.62 50 -35, 
+                                      70 50 0, 60.62 50 35, 35 50 60.62, 
+                                      0 50 70, -35 50 60.62, 
+                                      -60.62 50 35]
+                                    }
+                                    coordIndex [
+                                      0, 1, 2, -1, 2, 3, 0, -1, 
+                                      0, 3, 4, -1, 4, 5, 0, -1, 
+                                      0, 5, 6, -1, 6, 7, 0, -1, 
+                                      0, 7, 8, -1, 8, 9, 0, -1, 
+                                      0, 9, 10, -1, 10, 11, 0, -1, 
+                                      1, 0, 12, -1, 12, 13, 1, -1, 
+                                      2, 1, 13, -1, 13, 14, 2, -1, 
+                                      3, 2, 14, -1, 14, 15, 3, -1, 
+                                      4, 3, 15, -1, 15, 16, 4, -1, 
+                                      5, 4, 16, -1, 16, 17, 5, -1, 
+                                      6, 5, 17, -1, 17, 18, 6, -1, 
+                                      7, 6, 18, -1, 18, 19, 7, -1, 
+                                      8, 7, 19, -1, 19, 20, 8, -1, 
+                                      9, 8, 20, -1, 20, 21, 9, -1, 
+                                      10, 9, 21, -1, 21, 22, 10, -1, 
+                                      11, 10, 22, -1, 22, 23, 11, -1, 
+                                      0, 11, 23, -1, 23, 12, 0, -1, 
+                                      23, 22, 21, -1, 21, 20, 23, -1, 
+                                      23, 20, 19, -1, 19, 18, 23, -1, 
+                                      23, 18, 17, -1, 17, 16, 23, -1, 
+                                      23, 16, 15, -1, 15, 14, 23, -1, 
+                                      23, 14, 13, -1, 13, 12, 23, -1]
+                                    }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        DEF bmrobarm10 Transform {
+                          translation 0 475 29.4
+                          rotation 1 0 0 -1.571
+                          children [
+                            DEF VIFS10 Transform {
+                              translation 0 0 1.313e-005
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                      diffuseColor 0.1 0.48 0.42
+                                      ambientIntensity 0.3
+                                      specularColor 0 0 0
+                                      shininess 0.06615
+                                      transparency 0
+                                    }
+                                  }
+                                  geometry DEF VIFS10-FACES IndexedFaceSet {
+                                    ccw TRUE
+                                    solid FALSE
+                                    coord DEF VIFS10-COORD Coordinate { point [
+                                      -70 0 0, -60.62 0 -35, -35 0 -60.62, 
+                                      0 0 -70, 35 0 -60.62, 60.62 0 -35, 
+                                      70 0 0, 60.62 0 35, 35 0 60.62, 
+                                      0 0 70, -35 0 60.62, -60.62 0 35, 
+                                      -70 29.4 0, -60.62 29.4 -35, 
+                                      -35 29.4 -60.62, 0 29.4 -70, 
+                                      35 29.4 -60.62, 60.62 29.4 -35, 
+                                      70 29.4 0, 60.62 29.4 35, 
+                                      35 29.4 60.62, 0 29.4 70, 
+                                      -35 29.4 60.62, -60.62 29.4 35]
+                                    }
+                                    coordIndex [
+                                      0, 1, 2, -1, 2, 3, 0, -1, 
+                                      0, 3, 4, -1, 4, 5, 0, -1, 
+                                      0, 5, 6, -1, 6, 7, 0, -1, 
+                                      0, 7, 8, -1, 8, 9, 0, -1, 
+                                      0, 9, 10, -1, 10, 11, 0, -1, 
+                                      1, 0, 12, -1, 12, 13, 1, -1, 
+                                      2, 1, 13, -1, 13, 14, 2, -1, 
+                                      3, 2, 14, -1, 14, 15, 3, -1, 
+                                      4, 3, 15, -1, 15, 16, 4, -1, 
+                                      5, 4, 16, -1, 16, 17, 5, -1, 
+                                      6, 5, 17, -1, 17, 18, 6, -1, 
+                                      7, 6, 18, -1, 18, 19, 7, -1, 
+                                      8, 7, 19, -1, 19, 20, 8, -1, 
+                                      9, 8, 20, -1, 20, 21, 9, -1, 
+                                      10, 9, 21, -1, 21, 22, 10, -1, 
+                                      11, 10, 22, -1, 22, 23, 11, -1, 
+                                      0, 11, 23, -1, 23, 12, 0, -1, 
+                                      23, 22, 21, -1, 21, 20, 23, -1, 
+                                      23, 20, 19, -1, 19, 18, 23, -1, 
+                                      23, 18, 17, -1, 17, 16, 23, -1, 
+                                      23, 16, 15, -1, 15, 14, 23, -1, 
+                                      23, 14, 13, -1, 13, 12, 23, -1]
+                                    }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        DEF Body03 Transform {
+                          translation 0 475 110
+                          children [
+                            DEF bmrobarm11 Transform {
+                              translation 0 0 -45
+                              rotation 1 0 0 -1.571
+                              children [
+                                DEF VIFS11 Transform {
+                                  translation 0 0 0
+                                  children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 0.1 0.48 0.42
+                                          ambientIntensity 0.3
+                                          specularColor 0 0 0
+                                          shininess 0.06615
+                                          transparency 0
+                                        }
+                                      }
+                                      geometry DEF VIFS11-FACES IndexedFaceSet {
+                                        ccw TRUE
+                                        solid FALSE
+                                        coord DEF VIFS11-COORD Coordinate { point [
+                                          -60 0 0, -51.96 0 -30, 
+                                          -30 0 -51.96, 0 0 -60, 
+                                          30 0 -51.96, 51.96 0 -30, 
+                                          60 0 0, 51.96 0 30, 
+                                          30 0 51.96, 0 0 60, 
+                                          -30 0 51.96, -51.96 0 30, 
+                                          -60 30 0, -51.96 30 -30, 
+                                          -30 30 -51.96, 0 30 -60, 
+                                          30 30 -51.96, 51.96 30 -30, 
+                                          60 30 0, 51.96 30 30, 
+                                          30 30 51.96, 0 30 60, 
+                                          -30 30 51.96, -51.96 30 30]
+                                        }
+                                        coordIndex [
+                                          0, 1, 2, -1, 2, 3, 0, -1, 
+                                          0, 3, 4, -1, 4, 5, 0, -1, 
+                                          0, 5, 6, -1, 6, 7, 0, -1, 
+                                          0, 7, 8, -1, 8, 9, 0, -1, 
+                                          0, 9, 10, -1, 10, 11, 0, -1, 
+                                          1, 0, 12, -1, 12, 13, 1, -1, 
+                                          2, 1, 13, -1, 13, 14, 2, -1, 
+                                          3, 2, 14, -1, 14, 15, 3, -1, 
+                                          4, 3, 15, -1, 15, 16, 4, -1, 
+                                          5, 4, 16, -1, 16, 17, 5, -1, 
+                                          6, 5, 17, -1, 17, 18, 6, -1, 
+                                          7, 6, 18, -1, 18, 19, 7, -1, 
+                                          8, 7, 19, -1, 19, 20, 8, -1, 
+                                          9, 8, 20, -1, 20, 21, 9, -1, 
+                                          10, 9, 21, -1, 21, 22, 10, -1, 
+                                          11, 10, 22, -1, 22, 23, 11, -1, 
+                                          0, 11, 23, -1, 23, 12, 0, -1, 
+                                          23, 22, 21, -1, 21, 20, 23, -1, 
+                                          23, 20, 19, -1, 19, 18, 23, -1, 
+                                          23, 18, 17, -1, 17, 16, 23, -1, 
+                                          23, 16, 15, -1, 15, 14, 23, -1, 
+                                          23, 14, 13, -1, 13, 12, 23, -1]
+                                        }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            DEF bmrobarm12 Transform {
+                              translation 0 0 45
+                              rotation 1 0 0 -1.571
+                              children [
+                                DEF VIFS12 Transform {
+                                  translation 0 0 0
+                                  children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 0.1 0.48 0.42
+                                          ambientIntensity 0.3
+                                          specularColor 0 0 0
+                                          shininess 0.06615
+                                          transparency 0
+                                        }
+                                      }
+                                      geometry DEF VIFS12-FACES IndexedFaceSet {
+                                        ccw TRUE
+                                        solid FALSE
+                                        coord DEF VIFS12-COORD Coordinate { point [
+                                          -65 0 0, -56.29 0 -32.5, 
+                                          -32.5 0 -56.29, 0 0 -65, 
+                                          32.5 0 -56.29, 56.29 0 -32.5, 
+                                          65 0 0, 56.29 0 32.5, 
+                                          32.5 0 56.29, 0 0 65, 
+                                          -32.5 0 56.29, -56.29 0 32.5, 
+                                          -65 90 0, -56.29 90 -32.5, 
+                                          -32.5 90 -56.29, 0 90 -65, 
+                                          32.5 90 -56.29, 56.29 90 -32.5, 
+                                          65 90 0, 56.29 90 32.5, 
+                                          32.5 90 56.29, 0 90 65, 
+                                          -32.5 90 56.29, -56.29 90 32.5]
+                                        }
+                                        coordIndex [
+                                          0, 1, 2, -1, 2, 3, 0, -1, 
+                                          0, 3, 4, -1, 4, 5, 0, -1, 
+                                          0, 5, 6, -1, 6, 7, 0, -1, 
+                                          0, 7, 8, -1, 8, 9, 0, -1, 
+                                          0, 9, 10, -1, 10, 11, 0, -1, 
+                                          1, 0, 12, -1, 12, 13, 1, -1, 
+                                          2, 1, 13, -1, 13, 14, 2, -1, 
+                                          3, 2, 14, -1, 14, 15, 3, -1, 
+                                          4, 3, 15, -1, 15, 16, 4, -1, 
+                                          5, 4, 16, -1, 16, 17, 5, -1, 
+                                          6, 5, 17, -1, 17, 18, 6, -1, 
+                                          7, 6, 18, -1, 18, 19, 7, -1, 
+                                          8, 7, 19, -1, 19, 20, 8, -1, 
+                                          9, 8, 20, -1, 20, 21, 9, -1, 
+                                          10, 9, 21, -1, 21, 22, 10, -1, 
+                                          11, 10, 22, -1, 22, 23, 11, -1, 
+                                          0, 11, 23, -1, 23, 12, 0, -1, 
+                                          23, 22, 21, -1, 21, 20, 23, -1, 
+                                          23, 20, 19, -1, 19, 18, 23, -1, 
+                                          23, 18, 17, -1, 17, 16, 23, -1, 
+                                          23, 16, 15, -1, 15, 14, 23, -1, 
+                                          23, 14, 13, -1, 13, 12, 23, -1]
+                                        }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            DEF bmrobarm13 Transform {
+                              translation 0 -120 5
+                              children [
+                                DEF VIFS13 Transform {
+                                  translation 0 0 0
+                                  children [
+                                    Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                          diffuseColor 0.1 0.48 0.42
+                                          ambientIntensity 0.3
+                                          specularColor 0 0 0
+                                          shininess 0.06615
+                                          transparency 0
+                                        }
+                                      }
+                                      geometry DEF VIFS13-FACES IndexedFaceSet {
+                                        ccw TRUE
+                                        solid FALSE
+                                        coord DEF VIFS13-COORD Coordinate { point [
+                                          -31.5 0 0, -27.28 0 -15.75, 
+                                          -15.75 0 -27.28, 0 0 -31.5, 
+                                          15.75 0 -27.28, 27.28 0 -15.75, 
+                                          31.5 0 0, 27.28 0 15.75, 
+                                          15.75 0 27.28, 0 0 31.5, 
+                                          -15.75 0 27.28, -27.28 0 15.75, 
+                                          -31.5 470 0, -27.28 470 -15.75, 
+                                          -15.75 470 -27.28, 
+                                          0 470 -31.5, 15.75 470 -27.28, 
+                                          27.28 470 -15.75, 31.5 470 0, 
+                                          27.28 470 15.75, 15.75 470 27.28, 
+                                          0 470 31.5, -15.75 470 27.28, 
+                                          -27.28 470 15.75]
+                                        }
+                                        coordIndex [
+                                          0, 1, 2, -1, 2, 3, 0, -1, 
+                                          0, 3, 4, -1, 4, 5, 0, -1, 
+                                          0, 5, 6, -1, 6, 7, 0, -1, 
+                                          0, 7, 8, -1, 8, 9, 0, -1, 
+                                          0, 9, 10, -1, 10, 11, 0, -1, 
+                                          1, 0, 12, -1, 12, 13, 1, -1, 
+                                          2, 1, 13, -1, 13, 14, 2, -1, 
+                                          3, 2, 14, -1, 14, 15, 3, -1, 
+                                          4, 3, 15, -1, 15, 16, 4, -1, 
+                                          5, 4, 16, -1, 16, 17, 5, -1, 
+                                          6, 5, 17, -1, 17, 18, 6, -1, 
+                                          7, 6, 18, -1, 18, 19, 7, -1, 
+                                          8, 7, 19, -1, 19, 20, 8, -1, 
+                                          9, 8, 20, -1, 20, 21, 9, -1, 
+                                          10, 9, 21, -1, 21, 22, 10, -1, 
+                                          11, 10, 22, -1, 22, 23, 11, -1, 
+                                          0, 11, 23, -1, 23, 12, 0, -1, 
+                                          23, 22, 21, -1, 21, 20, 23, -1, 
+                                          23, 20, 19, -1, 19, 18, 23, -1, 
+                                          23, 18, 17, -1, 17, 16, 23, -1, 
+                                          23, 16, 15, -1, 15, 14, 23, -1, 
+                                          23, 14, 13, -1, 13, 12, 23, -1]
+                                        }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            DEF Body04 Transform {
+                              translation 0 346 0
+                              children [
+                                DEF bmrobarm14 Transform {
+                                  translation 0 9 -30
+                                  children [
+                                    DEF VIFS14 Transform {
+                                      translation 0 0 0
+                                      children [
+                                        Shape {
+                                          appearance Appearance {
+                                            material Material {
+                                              diffuseColor 0.1 0.48 0.42
+                                              ambientIntensity 0.3
+                                              specularColor 0 0 0
+                                              shininess 0.06615
+                                              transparency 0
+                                            }
+                                          }
+                                          geometry DEF VIFS14-FACES IndexedFaceSet {
+                                            ccw TRUE
+                                            solid FALSE
+                                            coord DEF VIFS14-COORD Coordinate { point [
+                                              -35 0 5, -35 0 -5, 
+                                              35 0 -5, 35 0 5, 
+                                              35 70 5, -35 70 5, 
+                                              -35 70 -5, 35 70 -5]
+                                            }
+                                            coordIndex [
+                                              0, 1, 2, -1, 2, 3, 0, -1, 
+                                              3, 4, 5, -1, 5, 0, 3, -1, 
+                                              5, 6, 1, -1, 1, 0, 5, -1, 
+                                              6, 7, 2, -1, 2, 1, 6, -1, 
+                                              7, 4, 3, -1, 3, 2, 7, -1, 
+                                              7, 6, 5, -1, 5, 4, 7, -1]
+                                            }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                DEF bmrobarm15 Transform {
+                                  translation 0 9 0
+                                  children [
+                                    DEF VIFS15 Transform {
+                                      translation 0 0 0
+                                      children [
+                                        Shape {
+                                          appearance Appearance {
+                                            material Material {
+                                              diffuseColor 0.1 0.48 0.42
+                                              ambientIntensity 0.3
+                                              specularColor 0 0 0
+                                              shininess 0.06615
+                                              transparency 0
+                                            }
+                                          }
+                                          geometry DEF VIFS15-FACES IndexedFaceSet {
+                                            ccw TRUE
+                                            solid FALSE
+                                            coord DEF VIFS15-COORD Coordinate { point [
+                                              -35 0 35, -35 0 -35, 
+                                              35 0 -35, 35 0 35, 
+                                              35 10 35, -35 10 35, 
+                                              -35 10 -35, 35 10 -35]
+                                            }
+                                            coordIndex [
+                                              0, 1, 2, -1, 2, 3, 0, -1, 
+                                              3, 4, 5, -1, 5, 0, 3, -1, 
+                                              5, 6, 1, -1, 1, 0, 5, -1, 
+                                              6, 7, 2, -1, 2, 1, 6, -1, 
+                                              7, 4, 3, -1, 3, 2, 7, -1, 
+                                              7, 6, 5, -1, 5, 4, 7, -1]
+                                            }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                DEF Body05 Transform {
+                                  translation 0 49 0
+                                  children [
+                                    DEF bmrobarm16 Transform {
+                                      translation 0 0 105
+                                      rotation 1 0 0 -1.571
+                                      children [
+                                        DEF VIFS16 Transform {
+                                          translation 0 0 -1.711e-005
+                                          children [
+                                            Shape {
+                                              appearance Appearance {
+                                                material Material {
+                                                  diffuseColor 0.1 0.48 0.42
+                                                  ambientIntensity 0.3
+                                                  specularColor 0 0 0
+                                                  shininess 0.06615
+                                                  transparency 0
+                                                }
+                                              }
+                                              geometry DEF VIFS16-FACES IndexedFaceSet {
+                                                ccw TRUE
+                                                solid FALSE
+                                                coord DEF VIFS16-COORD Coordinate { point [
+                                                  -31.5 0 0, -27.28 0 -15.75, 
+                                                  -15.75 0 -27.28, 
+                                                  0 0 -31.5, 
+                                                  15.75 0 -27.28, 
+                                                  27.28 0 -15.75, 
+                                                  31.5 0 0, 27.28 0 15.75, 
+                                                  15.75 0 27.28, 
+                                                  0 0 31.5, -15.75 0 27.28, 
+                                                  -27.28 0 15.75, 
+                                                  -31.5 130 0, 
+                                                  -27.28 130 -15.75, 
+                                                  -15.75 130 -27.28, 
+                                                  0 130 -31.5, 
+                                                  15.75 130 -27.28, 
+                                                  27.28 130 -15.75, 
+                                                  31.5 130 0, 
+                                                  27.28 130 15.75, 
+                                                  15.75 130 27.28, 
+                                                  0 130 31.5, 
+                                                  -15.75 130 27.28, 
+                                                  -27.28 130 15.75]
+                                                }
+                                                coordIndex [
+                                                  0, 1, 2, -1, 
+                                                  2, 3, 0, -1, 
+                                                  0, 3, 4, -1, 
+                                                  4, 5, 0, -1, 
+                                                  0, 5, 6, -1, 
+                                                  6, 7, 0, -1, 
+                                                  0, 7, 8, -1, 
+                                                  8, 9, 0, -1, 
+                                                  0, 9, 10, -1, 
+                                                  10, 11, 0, -1, 
+                                                  1, 0, 12, -1, 
+                                                  12, 13, 1, -1, 
+                                                  2, 1, 13, -1, 
+                                                  13, 14, 2, -1, 
+                                                  3, 2, 14, -1, 
+                                                  14, 15, 3, -1, 
+                                                  4, 3, 15, -1, 
+                                                  15, 16, 4, -1, 
+                                                  5, 4, 16, -1, 
+                                                  16, 17, 5, -1, 
+                                                  6, 5, 17, -1, 
+                                                  17, 18, 6, -1, 
+                                                  7, 6, 18, -1, 
+                                                  18, 19, 7, -1, 
+                                                  8, 7, 19, -1, 
+                                                  19, 20, 8, -1, 
+                                                  9, 8, 20, -1, 
+                                                  20, 21, 9, -1, 
+                                                  10, 9, 21, -1, 
+                                                  21, 22, 10, -1, 
+                                                  11, 10, 22, -1, 
+                                                  22, 23, 11, -1, 
+                                                  0, 11, 23, -1, 
+                                                  23, 12, 0, -1, 
+                                                  23, 22, 21, -1, 
+                                                  21, 20, 23, -1, 
+                                                  23, 20, 19, -1, 
+                                                  19, 18, 23, -1, 
+                                                  23, 18, 17, -1, 
+                                                  17, 16, 23, -1, 
+                                                  23, 16, 15, -1, 
+                                                  15, 14, 23, -1, 
+                                                  23, 14, 13, -1, 
+                                                  13, 12, 23, -1]
+                                                }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    DEF bmrobarm17 Transform {
+                                      translation 0 0 10
+                                      children [
+                                        DEF VIFS17 Transform {
+                                          translation 0 0 0
+                                          children [
+                                            Shape {
+                                              appearance Appearance {
+                                                material Material {
+                                                  diffuseColor 0.1 0.48 0.42
+                                                  ambientIntensity 0.3
+                                                  specularColor 0 0 0
+                                                  shininess 0.06615
+                                                  transparency 0
+                                                }
+                                              }
+                                              geometry DEF VIFS17-FACES IndexedFaceSet {
+                                                ccw TRUE
+                                                solid FALSE
+                                                coord DEF VIFS17-COORD Coordinate { point [
+                                                  -31.5 0 0, -27.28 0 -15.75, 
+                                                  -15.75 0 -27.28, 
+                                                  0 0 -31.5, 
+                                                  15.75 0 -27.28, 
+                                                  27.28 0 -15.75, 
+                                                  31.5 0 0, 27.28 0 15.75, 
+                                                  15.75 0 27.28, 
+                                                  0 0 31.5, -15.75 0 27.28, 
+                                                  -27.28 0 15.75, 
+                                                  -31.5 40 0, 
+                                                  -27.28 40 -15.75, 
+                                                  -15.75 40 -27.28, 
+                                                  0 40 -31.5, 
+                                                  15.75 40 -27.28, 
+                                                  27.28 40 -15.75, 
+                                                  31.5 40 0, 
+                                                  27.28 40 15.75, 
+                                                  15.75 40 27.28, 
+                                                  0 40 31.5, 
+                                                  -15.75 40 27.28, 
+                                                  -27.28 40 15.75]
+                                                }
+                                                coordIndex [
+                                                  0, 1, 2, -1, 
+                                                  2, 3, 0, -1, 
+                                                  0, 3, 4, -1, 
+                                                  4, 5, 0, -1, 
+                                                  0, 5, 6, -1, 
+                                                  6, 7, 0, -1, 
+                                                  0, 7, 8, -1, 
+                                                  8, 9, 0, -1, 
+                                                  0, 9, 10, -1, 
+                                                  10, 11, 0, -1, 
+                                                  1, 0, 12, -1, 
+                                                  12, 13, 1, -1, 
+                                                  2, 1, 13, -1, 
+                                                  13, 14, 2, -1, 
+                                                  3, 2, 14, -1, 
+                                                  14, 15, 3, -1, 
+                                                  4, 3, 15, -1, 
+                                                  15, 16, 4, -1, 
+                                                  5, 4, 16, -1, 
+                                                  16, 17, 5, -1, 
+                                                  6, 5, 17, -1, 
+                                                  17, 18, 6, -1, 
+                                                  7, 6, 18, -1, 
+                                                  18, 19, 7, -1, 
+                                                  8, 7, 19, -1, 
+                                                  19, 20, 8, -1, 
+                                                  9, 8, 20, -1, 
+                                                  20, 21, 9, -1, 
+                                                  10, 9, 21, -1, 
+                                                  21, 22, 10, -1, 
+                                                  11, 10, 22, -1, 
+                                                  22, 23, 11, -1, 
+                                                  0, 11, 23, -1, 
+                                                  23, 12, 0, -1, 
+                                                  23, 22, 21, -1, 
+                                                  21, 20, 23, -1, 
+                                                  23, 20, 19, -1, 
+                                                  19, 18, 23, -1, 
+                                                  23, 18, 17, -1, 
+                                                  17, 16, 23, -1, 
+                                                  23, 16, 15, -1, 
+                                                  15, 14, 23, -1, 
+                                                  23, 14, 13, -1, 
+                                                  13, 12, 23, -1]
+                                                }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    DEF Body06 Transform {
+                                      translation 0 40 10
+                                      children [
+                                        DEF bmrobarm18 Transform {
+                                          translation 0 0 0
+                                          children [
+                                            DEF V2Xfm01 Transform {
+                                              translation 0 0 0
+                                              children [
+                                                DEF VIFS18 Transform {
+                                                  translation 0 0 0
+                                                  children [
+                                                    Shape {
+                                                      appearance Appearance {
+                                                        material Material {
+                                                          diffuseColor 0.1 0.48 0.42
+                                                          ambientIntensity 0.3
+                                                          specularColor 0 0 0
+                                                          shininess 0.06615
+                                                          transparency 0
+                                                        }
+                                                      }
+                                                      geometry DEF VIFS18-FACES IndexedFaceSet {
+                                                        ccw TRUE
+                                                        solid FALSE
+                                                        coord DEF VIFS18-COORD Coordinate { point [
+                                                          -31.5 0 0, 
+                                                          -27.28 0 -15.75, 
+                                                          -15.75 0 -27.28, 
+                                                          0 0 -31.5, 
+                                                          15.75 0 -27.28, 
+                                                          27.28 0 -15.75, 
+                                                          31.5 0 0, 
+                                                          27.28 0 15.75, 
+                                                          15.75 0 27.28, 
+                                                          0 0 31.5, 
+                                                          -15.75 0 27.28, 
+                                                          -27.28 0 15.75, 
+                                                          -31.5 50 0, 
+                                                          -27.28 50 -15.75, 
+                                                          -15.75 50 -27.28, 
+                                                          0 50 -31.5, 
+                                                          15.75 50 -27.28, 
+                                                          27.28 50 -15.75, 
+                                                          31.5 50 0, 
+                                                          27.28 50 15.75, 
+                                                          15.75 50 27.28, 
+                                                          0 50 31.5, 
+                                                          -15.75 50 27.28, 
+                                                          -27.28 50 15.75]
+                                                        }
+                                                        coordIndex [
+                                                          0, 1, 2, -1, 
+                                                          2, 3, 0, -1, 
+                                                          0, 3, 4, -1, 
+                                                          4, 5, 0, -1, 
+                                                          0, 5, 6, -1, 
+                                                          6, 7, 0, -1, 
+                                                          0, 7, 8, -1, 
+                                                          8, 9, 0, -1, 
+                                                          0, 9, 10, -1, 
+                                                          10, 11, 0, -1, 
+                                                          1, 0, 12, -1, 
+                                                          12, 13, 1, -1, 
+                                                          2, 1, 13, -1, 
+                                                          13, 14, 2, -1, 
+                                                          3, 2, 14, -1, 
+                                                          14, 15, 3, -1, 
+                                                          4, 3, 15, -1, 
+                                                          15, 16, 4, -1, 
+                                                          5, 4, 16, -1, 
+                                                          16, 17, 5, -1, 
+                                                          6, 5, 17, -1, 
+                                                          17, 18, 6, -1, 
+                                                          7, 6, 18, -1, 
+                                                          18, 19, 7, -1, 
+                                                          8, 7, 19, -1, 
+                                                          19, 20, 8, -1, 
+                                                          9, 8, 20, -1, 
+                                                          20, 21, 9, -1, 
+                                                          10, 9, 21, -1, 
+                                                          21, 22, 10, -1, 
+                                                          11, 10, 22, -1, 
+                                                          22, 23, 11, -1, 
+                                                          0, 11, 23, -1, 
+                                                          23, 12, 0, -1, 
+                                                          23, 22, 21, -1, 
+                                                          21, 20, 23, -1, 
+                                                          23, 20, 19, -1, 
+                                                          19, 18, 23, -1, 
+                                                          23, 18, 17, -1, 
+                                                          17, 16, 23, -1, 
+                                                          23, 16, 15, -1, 
+                                                          15, 14, 23, -1, 
+                                                          23, 14, 13, -1, 
+                                                          13, 12, 23, -1]
+                                                        }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        DEF Body07 Transform {
+                                          translation 0 0 0
+                                          children [
+                                            DEF bmrobarm19 Transform {
+                                              translation 0 35 -30
+                                              children [
+                                                DEF VIFS19 Transform {
+                                                  translation 0 0 0
+                                                  children [
+                                                    Shape {
+                                                      appearance Appearance {
+                                                        material Material {
+                                                          diffuseColor 0.1 0.48 0.42
+                                                          ambientIntensity 0.3
+                                                          specularColor 0 0 0
+                                                          shininess 0.06615
+                                                          transparency 0
+                                                        }
+                                                      }
+                                                      geometry DEF VIFS19-FACES IndexedFaceSet {
+                                                        ccw TRUE
+                                                        solid FALSE
+                                                        coord DEF VIFS19-COORD Coordinate { point [
+                                                          -5 0 5, 
+                                                          -5 0 -5, 
+                                                          5 0 -5, 
+                                                          5 0 5, 
+                                                          5 80 5, 
+                                                          -5 80 5, 
+                                                          -5 80 -5, 
+                                                          5 80 -5]
+                                                        }
+                                                        coordIndex [
+                                                          0, 1, 2, -1, 
+                                                          2, 3, 0, -1, 
+                                                          3, 4, 5, -1, 
+                                                          5, 0, 3, -1, 
+                                                          5, 6, 1, -1, 
+                                                          1, 0, 5, -1, 
+                                                          6, 7, 2, -1, 
+                                                          2, 1, 6, -1, 
+                                                          7, 4, 3, -1, 
+                                                          3, 2, 7, -1, 
+                                                          7, 6, 5, -1, 
+                                                          5, 4, 7, -1]
+                                                        }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        DEF Body08 Transform {
+                                          translation 0 0 0
+                                          children [
+                                            DEF bmrobarm20 Transform {
+                                              translation 0 35 30
+                                              children [
+                                                DEF VIFS20 Transform {
+                                                  translation 0 0 0
+                                                  children [
+                                                    Shape {
+                                                      appearance Appearance {
+                                                        material Material {
+                                                          diffuseColor 0.1 0.48 0.42
+                                                          ambientIntensity 0.3
+                                                          specularColor 0 0 0
+                                                          shininess 0.06615
+                                                          transparency 0
+                                                        }
+                                                      }
+                                                      geometry DEF VIFS20-FACES IndexedFaceSet {
+                                                        ccw TRUE
+                                                        solid FALSE
+                                                        coord DEF VIFS20-COORD Coordinate { point [
+                                                          -5 0 5, 
+                                                          -5 0 -5, 
+                                                          5 0 -5, 
+                                                          5 0 5, 
+                                                          5 80 5, 
+                                                          -5 80 5, 
+                                                          -5 80 -5, 
+                                                          5 80 -5]
+                                                        }
+                                                        coordIndex [
+                                                          0, 1, 2, -1, 
+                                                          2, 3, 0, -1, 
+                                                          3, 4, 5, -1, 
+                                                          5, 0, 3, -1, 
+                                                          5, 6, 1, -1, 
+                                                          1, 0, 5, -1, 
+                                                          6, 7, 2, -1, 
+                                                          2, 1, 6, -1, 
+                                                          7, 4, 3, -1, 
+                                                          3, 2, 7, -1, 
+                                                          7, 6, 5, -1, 
+                                                          5, 4, 7, -1]
+                                                        }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            DEF bmrobbarre01 Transform {
+                                              translation -180 86 0
+                                              rotation -0.5774 0.5774 0.5774 -2.094
+                                              children [
+                                                DEF VCyl01 Transform {
+                                                  translation 0 0 0
+                                                  children [
+                                                    Shape {
+                                                      appearance Appearance {
+                                                        material Material {
+                                                          diffuseColor 0.1 0.48 0.42
+                                                          ambientIntensity 0.3
+                                                          specularColor 0 0 0
+                                                          shininess 0.06615
+                                                          transparency 0
+                                                        }
+                                                      }
+                                                      geometry DEF VCyl01-FACES IndexedFaceSet {
+                                                        ccw TRUE
+                                                        solid TRUE
+                                                        coord DEF VCyl01-COORD Coordinate { point [
+                                                          0 -10 200, 
+                                                          -4.067 -9.135 200, 
+                                                          -7.431 -6.691 200, 
+                                                          -9.511 -3.09 200, 
+                                                          -9.945 1.045 200, 
+                                                          -8.66 5 200, 
+                                                          -5.878 8.09 200, 
+                                                          -2.079 9.781 200, 
+                                                          2.079 9.781 200, 
+                                                          5.878 8.09 200, 
+                                                          8.66 5 200, 
+                                                          9.945 1.045 200, 
+                                                          9.511 -3.09 200, 
+                                                          7.431 -6.691 200, 
+                                                          4.067 -9.135 200, 
+                                                          0 -10 200, 
+                                                          0 -10 -200, 
+                                                          -4.067 -9.135 -200, 
+                                                          -7.431 -6.691 -200, 
+                                                          -9.511 -3.09 -200, 
+                                                          -9.945 1.045 -200, 
+                                                          -8.66 5 -200, 
+                                                          -5.878 8.09 -200, 
+                                                          -2.079 9.781 -200, 
+                                                          2.079 9.781 -200, 
+                                                          5.878 8.09 -200, 
+                                                          8.66 5 -200, 
+                                                          9.945 1.045 -200, 
+                                                          9.511 -3.09 -200, 
+                                                          7.431 -6.691 -200, 
+                                                          4.067 -9.135 -200, 
+                                                          0 -10 -200, 
+                                                          0 -10 -200, 
+                                                          -4.067 -9.135 -200, 
+                                                          -7.431 -6.691 -200, 
+                                                          -9.511 -3.09 -200, 
+                                                          -9.945 1.045 -200, 
+                                                          -8.66 5 -200, 
+                                                          -5.878 8.09 -200, 
+                                                          -2.079 9.781 -200, 
+                                                          2.079 9.781 -200, 
+                                                          5.878 8.09 -200, 
+                                                          8.66 5 -200, 
+                                                          9.945 1.045 -200, 
+                                                          9.511 -3.09 -200, 
+                                                          7.431 -6.691 -200, 
+                                                          4.067 -9.135 -200, 
+                                                          0 0 -200, 
+                                                          0 -10 200, 
+                                                          -4.067 -9.135 200, 
+                                                          -7.431 -6.691 200, 
+                                                          -9.511 -3.09 200, 
+                                                          -9.945 1.045 200, 
+                                                          -8.66 5 200, 
+                                                          -5.878 8.09 200, 
+                                                          -2.079 9.781 200, 
+                                                          2.079 9.781 200, 
+                                                          5.878 8.09 200, 
+                                                          8.66 5 200, 
+                                                          9.945 1.045 200, 
+                                                          9.511 -3.09 200, 
+                                                          7.431 -6.691 200, 
+                                                          4.067 -9.135 200, 
+                                                          0 0 200]
+                                                        }
+                                                        coordIndex [
+                                                          0, 1, 17, -1, 
+                                                          17, 16, 0, -1, 
+                                                          1, 2, 18, -1, 
+                                                          18, 17, 1, -1, 
+                                                          2, 3, 19, -1, 
+                                                          19, 18, 2, -1, 
+                                                          3, 4, 20, -1, 
+                                                          20, 19, 3, -1, 
+                                                          4, 5, 21, -1, 
+                                                          21, 20, 4, -1, 
+                                                          5, 6, 22, -1, 
+                                                          22, 21, 5, -1, 
+                                                          6, 7, 23, -1, 
+                                                          23, 22, 6, -1, 
+                                                          7, 8, 24, -1, 
+                                                          24, 23, 7, -1, 
+                                                          8, 9, 25, -1, 
+                                                          25, 24, 8, -1, 
+                                                          9, 10, 26, -1, 
+                                                          26, 25, 9, -1, 
+                                                          10, 11, 27, -1, 
+                                                          27, 26, 10, -1, 
+                                                          11, 12, 28, -1, 
+                                                          28, 27, 11, -1, 
+                                                          12, 13, 29, -1, 
+                                                          29, 28, 12, -1, 
+                                                          13, 14, 30, -1, 
+                                                          30, 29, 13, -1, 
+                                                          14, 15, 31, -1, 
+                                                          31, 30, 14, -1, 
+                                                          32, 33, 47, -1, 
+                                                          33, 34, 47, -1, 
+                                                          34, 35, 47, -1, 
+                                                          35, 36, 47, -1, 
+                                                          36, 37, 47, -1, 
+                                                          37, 38, 47, -1, 
+                                                          38, 39, 47, -1, 
+                                                          39, 40, 47, -1, 
+                                                          40, 41, 47, -1, 
+                                                          41, 42, 47, -1, 
+                                                          42, 43, 47, -1, 
+                                                          43, 44, 47, -1, 
+                                                          44, 45, 47, -1, 
+                                                          45, 46, 47, -1, 
+                                                          46, 32, 47, -1, 
+                                                          49, 48, 63, -1, 
+                                                          50, 49, 63, -1, 
+                                                          51, 50, 63, -1, 
+                                                          52, 51, 63, -1, 
+                                                          53, 52, 63, -1, 
+                                                          54, 53, 63, -1, 
+                                                          55, 54, 63, -1, 
+                                                          56, 55, 63, -1, 
+                                                          57, 56, 63, -1, 
+                                                          58, 57, 63, -1, 
+                                                          59, 58, 63, -1, 
+                                                          60, 59, 63, -1, 
+                                                          61, 60, 63, -1, 
+                                                          62, 61, 63, -1, 
+                                                          48, 62, 63, -1]
+                                                        }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                DEF bmbarre01 Transform {
+                  translation 400 1225 -300
+                  rotation -1 0 0 -1.571
+                  children [
+                    DEF VCyl02 Transform {
+                      translation 0 0 1.311e-005
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.6 0.8 0.6
+                              ambientIntensity 0.3
+                              specularColor 0 0 0
+                              shininess 0.06615
+                              transparency 0
+                            }
+                          }
+                          geometry DEF VCyl02-FACES IndexedFaceSet {
+                            ccw TRUE
+                            solid TRUE
+                            coord DEF VCyl02-COORD Coordinate { point [
+                              0 -100 1250, -40.67 -91.35 1250, 
+                              -74.31 -66.91 1250, -95.11 -30.9 1250, 
+                              -99.45 10.45 1250, -86.6 50 1250, 
+                              -58.78 80.9 1250, -20.79 97.81 1250, 
+                              20.79 97.81 1250, 58.78 80.9 1250, 
+                              86.6 50 1250, 99.45 10.45 1250, 
+                              95.11 -30.9 1250, 74.31 -66.91 1250, 
+                              40.67 -91.35 1250, 0 -100 1250, 
+                              0 -100 -1250, -40.67 -91.35 -1250, 
+                              -74.31 -66.91 -1250, -95.11 -30.9 -1250, 
+                              -99.45 10.45 -1250, -86.6 50 -1250, 
+                              -58.78 80.9 -1250, -20.79 97.81 -1250, 
+                              20.79 97.81 -1250, 58.78 80.9 -1250, 
+                              86.6 50 -1250, 99.45 10.45 -1250, 
+                              95.11 -30.9 -1250, 74.31 -66.91 -1250, 
+                              40.67 -91.35 -1250, 0 -100 -1250, 
+                              0 -100 -1250, -40.67 -91.35 -1250, 
+                              -74.31 -66.91 -1250, -95.11 -30.9 -1250, 
+                              -99.45 10.45 -1250, -86.6 50 -1250, 
+                              -58.78 80.9 -1250, -20.79 97.81 -1250, 
+                              20.79 97.81 -1250, 58.78 80.9 -1250, 
+                              86.6 50 -1250, 99.45 10.45 -1250, 
+                              95.11 -30.9 -1250, 74.31 -66.91 -1250, 
+                              40.67 -91.35 -1250, 0 0 -1250, 
+                              0 -100 1250, -40.67 -91.35 1250, 
+                              -74.31 -66.91 1250, -95.11 -30.9 1250, 
+                              -99.45 10.45 1250, -86.6 50 1250, 
+                              -58.78 80.9 1250, -20.79 97.81 1250, 
+                              20.79 97.81 1250, 58.78 80.9 1250, 
+                              86.6 50 1250, 99.45 10.45 1250, 
+                              95.11 -30.9 1250, 74.31 -66.91 1250, 
+                              40.67 -91.35 1250, 0 0 1250]
+                            }
+                            coordIndex [
+                              0, 1, 17, -1, 17, 16, 0, -1, 1, 2, 18, -1, 
+                              18, 17, 1, -1, 2, 3, 19, -1, 19, 18, 2, -1, 
+                              3, 4, 20, -1, 20, 19, 3, -1, 4, 5, 21, -1, 
+                              21, 20, 4, -1, 5, 6, 22, -1, 22, 21, 5, -1, 
+                              6, 7, 23, -1, 23, 22, 6, -1, 7, 8, 24, -1, 
+                              24, 23, 7, -1, 8, 9, 25, -1, 25, 24, 8, -1, 
+                              9, 10, 26, -1, 26, 25, 9, -1, 10, 11, 27, -1, 
+                              27, 26, 10, -1, 11, 12, 28, -1, 
+                              28, 27, 11, -1, 12, 13, 29, -1, 
+                              29, 28, 12, -1, 13, 14, 30, -1, 
+                              30, 29, 13, -1, 14, 15, 31, -1, 
+                              31, 30, 14, -1, 32, 33, 47, -1, 
+                              33, 34, 47, -1, 34, 35, 47, -1, 
+                              35, 36, 47, -1, 36, 37, 47, -1, 
+                              37, 38, 47, -1, 38, 39, 47, -1, 
+                              39, 40, 47, -1, 40, 41, 47, -1, 
+                              41, 42, 47, -1, 42, 43, 47, -1, 
+                              43, 44, 47, -1, 44, 45, 47, -1, 
+                              45, 46, 47, -1, 46, 32, 47, -1, 
+                              49, 48, 63, -1, 50, 49, 63, -1, 
+                              51, 50, 63, -1, 52, 51, 63, -1, 
+                              53, 52, 63, -1, 54, 53, 63, -1, 
+                              55, 54, 63, -1, 56, 55, 63, -1, 
+                              57, 56, 63, -1, 58, 57, 63, -1, 
+                              59, 58, 63, -1, 60, 59, 63, -1, 
+                              61, 60, 63, -1, 62, 61, 63, -1, 
+                              48, 62, 63, -1]
+                            }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                DEF bmbarre02 Transform {
+                  translation 400 1225 300
+                  rotation -1 0 0 -1.571
+                  children [
+                    DEF VCyl03 Transform {
+                      translation 0 0 -1.311e-005
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.6 0.8 0.6
+                              ambientIntensity 0.3
+                              specularColor 0 0 0
+                              shininess 0.06615
+                              transparency 0
+                            }
+                          }
+                          geometry DEF VCyl03-FACES IndexedFaceSet {
+                            ccw TRUE
+                            solid TRUE
+                            coord DEF VCyl03-COORD Coordinate { point [
+                              0 -100 1250, -40.67 -91.35 1250, 
+                              -74.31 -66.91 1250, -95.11 -30.9 1250, 
+                              -99.45 10.45 1250, -86.6 50 1250, 
+                              -58.78 80.9 1250, -20.79 97.81 1250, 
+                              20.79 97.81 1250, 58.78 80.9 1250, 
+                              86.6 50 1250, 99.45 10.45 1250, 
+                              95.11 -30.9 1250, 74.31 -66.91 1250, 
+                              40.67 -91.35 1250, 0 -100 1250, 
+                              0 -100 -1250, -40.67 -91.35 -1250, 
+                              -74.31 -66.91 -1250, -95.11 -30.9 -1250, 
+                              -99.45 10.45 -1250, -86.6 50 -1250, 
+                              -58.78 80.9 -1250, -20.79 97.81 -1250, 
+                              20.79 97.81 -1250, 58.78 80.9 -1250, 
+                              86.6 50 -1250, 99.45 10.45 -1250, 
+                              95.11 -30.9 -1250, 74.31 -66.91 -1250, 
+                              40.67 -91.35 -1250, 0 -100 -1250, 
+                              0 -100 -1250, -40.67 -91.35 -1250, 
+                              -74.31 -66.91 -1250, -95.11 -30.9 -1250, 
+                              -99.45 10.45 -1250, -86.6 50 -1250, 
+                              -58.78 80.9 -1250, -20.79 97.81 -1250, 
+                              20.79 97.81 -1250, 58.78 80.9 -1250, 
+                              86.6 50 -1250, 99.45 10.45 -1250, 
+                              95.11 -30.9 -1250, 74.31 -66.91 -1250, 
+                              40.67 -91.35 -1250, 0 0 -1250, 
+                              0 -100 1250, -40.67 -91.35 1250, 
+                              -74.31 -66.91 1250, -95.11 -30.9 1250, 
+                              -99.45 10.45 1250, -86.6 50 1250, 
+                              -58.78 80.9 1250, -20.79 97.81 1250, 
+                              20.79 97.81 1250, 58.78 80.9 1250, 
+                              86.6 50 1250, 99.45 10.45 1250, 
+                              95.11 -30.9 1250, 74.31 -66.91 1250, 
+                              40.67 -91.35 1250, 0 0 1250]
+                            }
+                            coordIndex [
+                              0, 1, 17, -1, 17, 16, 0, -1, 1, 2, 18, -1, 
+                              18, 17, 1, -1, 2, 3, 19, -1, 19, 18, 2, -1, 
+                              3, 4, 20, -1, 20, 19, 3, -1, 4, 5, 21, -1, 
+                              21, 20, 4, -1, 5, 6, 22, -1, 22, 21, 5, -1, 
+                              6, 7, 23, -1, 23, 22, 6, -1, 7, 8, 24, -1, 
+                              24, 23, 7, -1, 8, 9, 25, -1, 25, 24, 8, -1, 
+                              9, 10, 26, -1, 26, 25, 9, -1, 10, 11, 27, -1, 
+                              27, 26, 10, -1, 11, 12, 28, -1, 
+                              28, 27, 11, -1, 12, 13, 29, -1, 
+                              29, 28, 12, -1, 13, 14, 30, -1, 
+                              30, 29, 13, -1, 14, 15, 31, -1, 
+                              31, 30, 14, -1, 32, 33, 47, -1, 
+                              33, 34, 47, -1, 34, 35, 47, -1, 
+                              35, 36, 47, -1, 36, 37, 47, -1, 
+                              37, 38, 47, -1, 38, 39, 47, -1, 
+                              39, 40, 47, -1, 40, 41, 47, -1, 
+                              41, 42, 47, -1, 42, 43, 47, -1, 
+                              43, 44, 47, -1, 44, 45, 47, -1, 
+                              45, 46, 47, -1, 46, 32, 47, -1, 
+                              49, 48, 63, -1, 50, 49, 63, -1, 
+                              51, 50, 63, -1, 52, 51, 63, -1, 
+                              53, 52, 63, -1, 54, 53, 63, -1, 
+                              55, 54, 63, -1, 56, 55, 63, -1, 
+                              57, 56, 63, -1, 58, 57, 63, -1, 
+                              59, 58, 63, -1, 60, 59, 63, -1, 
+                              61, 60, 63, -1, 62, 61, 63, -1, 
+                              48, 62, 63, -1]
+                            }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                DEF bmmur01 Transform {
+                  translation -800 450 0
+                  children [
+                    DEF VBox06 Transform {
+                      translation 0 0 0
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.6 0.8 0.6
+                              ambientIntensity 0.3
+                              specularColor 0 0 0
+                              shininess 0.06615
+                              transparency 0
+                            }
+                          }
+                          geometry DEF VBox06-FACES IndexedFaceSet {
+                            ccw TRUE
+                            solid TRUE
+                            coord DEF VBox06-COORD Coordinate { point [
+                              -45 -450 -600, -45 450 -600, -45 -450 600, 
+                              -45 450 600, 45 -450 -600, 45 450 -600, 
+                              45 -450 600, 45 450 600]
+                            }
+                            coordIndex [
+                              1, 3, 7, -1, 7, 5, 1, -1, 0, 4, 6, -1, 
+                              6, 2, 0, -1, 0, 2, 3, -1, 3, 1, 0, -1, 
+                              4, 5, 7, -1, 7, 6, 4, -1, 0, 1, 5, -1, 
+                              5, 4, 0, -1, 2, 6, 7, -1, 7, 3, 2, -1]
+                            }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                DEF bmmur02 Transform {
+                  translation -800 1100 -400
+                  children [
+                    DEF VBox07 Transform {
+                      translation 0 0 0
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.6 0.8 0.6
+                              ambientIntensity 0.3
+                              specularColor 0 0 0
+                              shininess 0.06615
+                              transparency 0
+                            }
+                          }
+                          geometry DEF VBox07-FACES IndexedFaceSet {
+                            ccw TRUE
+                            solid TRUE
+                            coord DEF VBox07-COORD Coordinate { point [
+                              -45 -200 -200, -45 200 -200, -45 -200 200, 
+                              -45 200 200, 45 -200 -200, 45 200 -200, 
+                              45 -200 200, 45 200 200]
+                            }
+                            coordIndex [
+                              1, 3, 7, -1, 7, 5, 1, -1, 0, 4, 6, -1, 
+                              6, 2, 0, -1, 0, 2, 3, -1, 3, 1, 0, -1, 
+                              4, 5, 7, -1, 7, 6, 4, -1, 0, 1, 5, -1, 
+                              5, 4, 0, -1, 2, 6, 7, -1, 7, 3, 2, -1]
+                            }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                DEF bmmur03 Transform {
+                  translation -800 1100 400
+                  children [
+                    DEF VBox08 Transform {
+                      translation 0 0 0
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.6 0.8 0.6
+                              ambientIntensity 0.3
+                              specularColor 0 0 0
+                              shininess 0.06615
+                              transparency 0
+                            }
+                          }
+                          geometry DEF VBox08-FACES IndexedFaceSet {
+                            ccw TRUE
+                            solid TRUE
+                            coord DEF VBox08-COORD Coordinate { point [
+                              -45 -200 -200, -45 200 -200, -45 -200 200, 
+                              -45 200 200, 45 -200 -200, 45 200 -200, 
+                              45 -200 200, 45 200 200]
+                            }
+                            coordIndex [
+                              1, 3, 7, -1, 7, 5, 1, -1, 0, 4, 6, -1, 
+                              6, 2, 0, -1, 0, 2, 3, -1, 3, 1, 0, -1, 
+                              4, 5, 7, -1, 7, 6, 4, -1, 0, 1, 5, -1, 
+                              5, 4, 0, -1, 2, 6, 7, -1, 7, 3, 2, -1]
+                            }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                DEF bmmur04 Transform {
+                  translation -800 1750 0
+                  children [
+                    DEF VBox09 Transform {
+                      translation 0 0 0
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.6 0.8 0.6
+                              ambientIntensity 0.3
+                              specularColor 0 0 0
+                              shininess 0.06615
+                              transparency 0
+                            }
+                          }
+                          geometry DEF VBox09-FACES IndexedFaceSet {
+                            ccw TRUE
+                            solid TRUE
+                            coord DEF VBox09-COORD Coordinate { point [
+                              -45 -450 -600, -45 450 -600, -45 -450 600, 
+                              -45 450 600, 45 -450 -600, 45 450 -600, 
+                              45 -450 600, 45 450 600]
+                            }
+                            coordIndex [
+                              1, 3, 7, -1, 7, 5, 1, -1, 0, 4, 6, -1, 
+                              6, 2, 0, -1, 0, 2, 3, -1, 3, 1, 0, -1, 
+                              4, 5, 7, -1, 7, 6, 4, -1, 0, 1, 5, -1, 
+                              5, 4, 0, -1, 2, 6, 7, -1, 7, 3, 2, -1]
+                            }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                DEF bmcaisse01 Transform {
+                  translation 0 365 0
+                  children [
+                    DEF VBox10 Transform {
+                      translation 0 0 0
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.6 0.8 0.6
+                              ambientIntensity 0.3
+                              specularColor 0 0 0
+                              shininess 0.06615
+                              transparency 0
+                            }
+                          }
+                          geometry DEF VBox10-FACES IndexedFaceSet {
+                            ccw TRUE
+                            solid TRUE
+                            coord DEF VBox10-COORD Coordinate { point [
+                              -200 -395 -200, -200 395 -200, -200 -395 200, 
+                              -200 395 200, 200 -395 -200, 200 395 -200, 
+                              200 -395 200, 200 395 200]
+                            }
+                            coordIndex [
+                              1, 3, 7, -1, 7, 5, 1, -1, 0, 4, 6, -1, 
+                              6, 2, 0, -1, 0, 2, 3, -1, 3, 1, 0, -1, 
+                              4, 5, 7, -1, 7, 6, 4, -1, 0, 1, 5, -1, 
+                              5, 4, 0, -1, 2, 6, 7, -1, 7, 3, 2, -1]
+                            }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
