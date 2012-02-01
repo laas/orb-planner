@@ -72,7 +72,7 @@ BOOST_AUTO_TEST_CASE (plan)
     for (unsigned int i=0; i < moduleManager->countModules (); i++)
       std::cout << "Module " << i << ": "
 		<< moduleManager->module (i)->name () << std::endl;
-  
+
   // Create a parser instance.
   CkprParserManagerShPtr parser = CkprParserManager::defaultManager ();
 
@@ -98,14 +98,14 @@ BOOST_AUTO_TEST_CASE (plan)
 
   // Load a robot in the same scene.
   std::string robotFilename("./robot.kxml");
-  
+
   parseFile (robotFilename,
   	     parser,
   	     registry,
   	     modelTree);
 
   printComponent (modelTree);
-  
+
   // ----------------------------------------------------------------
 
   // Assuming there is one robot in the model tree, retrieve it.
@@ -122,7 +122,7 @@ BOOST_AUTO_TEST_CASE (plan)
   // outer objects collide with any of the inner objects. Usually you
   // have only one inner objet, and multiple outer objects, such as
   // objects from the environment, or other bodies of the same robot.
-  
+
   // Store all geometry component references of device to avoid adding
   // them as outer objects. This will allows us later on to add only
   // obstacles. Self-collision pairs can be then defined separately.
@@ -164,10 +164,10 @@ BOOST_AUTO_TEST_CASE (plan)
 	    CkcdObjectShPtr object
 	      = KIT_DYNAMIC_PTR_CAST (CkcdObject,
 				      solidComponent);
-	    
+
 	    CkwsDevice::TJointVector jointVector;
 	    robot->getJointVector (jointVector);
-	    
+
 	    CkwsKCDBodyShPtr body
 	      = KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
 				      jointVector[j]->attachedBody ());
@@ -195,7 +195,7 @@ BOOST_AUTO_TEST_CASE (plan)
 	    = KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
 				    jointVector[i]->attachedBody ());
 	  std::vector<CkcdObjectShPtr> outerObjects = body->outerObjects ();
-	  
+
 	  for (unsigned j = i + 2; j < solidComponentRefVector.size (); ++j)
 	    {
 	      CkppSolidComponentShPtr robotSolidComponent
@@ -212,7 +212,7 @@ BOOST_AUTO_TEST_CASE (plan)
 		  outerObjects.push_back (robotObject);
 		}
 	    }
-      
+
 	  body->outerObjects (outerObjects);
 	}
     }
@@ -226,7 +226,7 @@ BOOST_AUTO_TEST_CASE (plan)
       CkwsKCDBodyShPtr body
 	= KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
 				jointVector[i]->attachedBody ());
-      
+
       std::vector<CkcdObjectShPtr> innerObjects = body->innerObjects ();
       std::vector<CkcdObjectShPtr> outerObjects = body->outerObjects ();
 
@@ -249,7 +249,9 @@ BOOST_AUTO_TEST_CASE (plan)
   startDofValues[4] = 0.;
   startDofValues[5] = 0.;
   startConfig.setDofValues (startDofValues);
-  
+  assert (startConfig.isValid () == true
+	  && "Start configuration is not collision free, should be.");
+
   // Set target pose of the robot.
   CkwsConfig goalConfig (robot);
   std::vector<double> goalDofValues (6);
@@ -260,6 +262,8 @@ BOOST_AUTO_TEST_CASE (plan)
   goalDofValues[4] = 0.;
   goalDofValues[5] = 0.;
   goalConfig.setDofValues (goalDofValues);
+  assert (goalConfig.isValid () == true
+	  && "Goal configuration is not collision free, should be.");
 
   // ----------------------------------------------------------------
 
@@ -276,7 +280,7 @@ BOOST_AUTO_TEST_CASE (plan)
     = CkwsDiffusingRdmBuilder::create (roadmap);
   roadmapBuilder->penetration (10.);
   roadmapBuilder->diffuseFromProblemGoal (true);
-  
+
   // Create initial path from start and goal configurations.
   CkwsPathShPtr initPath = CkwsPath::create (robot);
   CkwsConfigShPtr startConfigShPtr = CkwsConfig::create (startConfig);
@@ -318,6 +322,35 @@ BOOST_AUTO_TEST_CASE (plan)
   // tolerance when checking for collisions. The lowest it is, the
   // safer the result, but the slower the validation.
   assert (solutionPath->validateWithPenetration (10.) == true
+	  && "Solution path is collliding, there is a problem.");
+
+  // ----------------------------------------------------------------
+
+  // Optimize path using Kineo random optimizer to shorten path
+  // length. It is a good idea to use this optimizer on the solution
+  // path to have a nicer initial guess for MUSCOD (even if the
+  // objective function does not take path length into consideration).
+  CkwsPathShPtr optimizedPath = CkwsPath::createCopy (solutionPath);
+  CkwsRandomOptimizerShPtr optimizer = CkwsRandomOptimizer::create ();
+  std::cout << "Optimizing..." << std::endl;
+  if (KD_OK == optimizer->optimizePath (optimizedPath))
+    std::cout << "OK" << std::endl;
+  else
+    std::cout << "ERROR" << std::endl;
+
+  // Print solution path.
+  std::cout << "optimized path: " << std::endl;
+  for (unsigned i = 0; i < optimizedPath->countConfigurations (); ++i)
+    {
+      CkwsConfig config (robot);
+      optimizedPath->getConfiguration (i, config);
+      std::cout << std::setw (5) << "q(" << i << "):";
+      for (unsigned j = 0; j < config.size (); ++j)
+	std::cout << std::setw (13) << config.dofValue (j);
+      std::cout << std::endl;
+    }
+
+  assert (optimizedPath->validateWithPenetration (10.) == true
 	  && "Solution path is collliding, there is a problem.");
 
   // ----------------------------------------------------------------
