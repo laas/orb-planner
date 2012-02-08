@@ -37,7 +37,7 @@ using boost::test_tools::output_test_stream;
 // Define where the device loading libraries are. Make sure you load
 // the correct ones (depending on whether you're using the release or
 // debug libraries).
-#define KINEO_INSTALL_DIR "/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/install/stable/kineo-2.06"
+#define KINEO_INSTALL_DIR "/home/mfelis/local/robotpkg/kineo-2.06"
 
 #define KINEODEVICEPARSING_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviceParsingd.so"
 #define KINEODEVICEBASE_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviceBased.so"
@@ -85,7 +85,7 @@ BOOST_AUTO_TEST_CASE (plan)
   // ----------------------------------------------------------------
 
   // Load the environment.
-  std::string obstacleFilename ("./obstacle.kxml");
+  std::string obstacleFilename ("./test_planning_only_obstacles.kxml");
 
   CkppModelTreeShPtr modelTree = CkppModelTree::create ();
 
@@ -97,7 +97,7 @@ BOOST_AUTO_TEST_CASE (plan)
   // ----------------------------------------------------------------
 
   // Load a robot in the same scene.
-  std::string robotFilename("./robot.kxml");
+  std::string robotFilename("./KUKA_sixx850.kxml");
 
   parseFile (robotFilename,
   	     parser,
@@ -118,7 +118,7 @@ BOOST_AUTO_TEST_CASE (plan)
 
   // ----------------------------------------------------------------
 
-  // A body of the robot is said to be in collision if any out the
+  // A body of the robot is said to be in collision if any of the
   // outer objects collide with any of the inner objects. Usually you
   // have only one inner objet, and multiple outer objects, such as
   // objects from the environment, or other bodies of the same robot.
@@ -126,96 +126,105 @@ BOOST_AUTO_TEST_CASE (plan)
   // Store all geometry component references of device to avoid adding
   // them as outer objects. This will allows us later on to add only
   // obstacles. Self-collision pairs can be then defined separately.
-  std::vector<CkppSolidComponentRefShPtr> solidComponentRefVector;
-  robot->getSolidComponentRefVector (solidComponentRefVector);
+	std::vector<CkppSolidComponentRefShPtr> solidComponentRefVector;
+	robot->getSolidComponentRefVector (solidComponentRefVector);
 
-  // Add all activated obstacles in model tree as outer objects of
-  // each joint body.
-  for (unsigned i = 0;
-       i < modelTree->geometryNode ()->countChildComponents ();
-       ++i)
-    {
-      CkppSolidComponentShPtr solidComponent
-	= KIT_DYNAMIC_PTR_CAST (CkppSolidComponent,
-				modelTree->geometryNode ()->childComponent (i));
-      assert (!!solidComponent && "Null pointer to solidComponent.");
-
-      unsigned j = 0;
-      bool isSolidComponentInRobot = false;
-      while (j < solidComponentRefVector.size ()
-	     && isSolidComponentInRobot == false)
+	// Add all activated obstacles in model tree as outer objects of
+	// each joint body.
+	for (unsigned i = 0;
+			i < modelTree->geometryNode ()->countChildComponents ();
+			++i)
 	{
-	  CkppSolidComponentShPtr robotSolidComponent
-	    = solidComponentRefVector[j]->referencedSolidComponent ();
-	  assert (!!robotSolidComponent
-		  && "Null pointer to robot solid component.");
-	  if (robotSolidComponent == solidComponent)
-	    {
-	      std::cout << "solid component " << i
-			<< " matches body in joint " << j << std::endl;
-	      isSolidComponentInRobot = true;
-	    }
-	  ++j;
+		CkppSolidComponentShPtr solidComponent
+			= KIT_DYNAMIC_PTR_CAST (CkppSolidComponent,
+					modelTree->geometryNode ()->childComponent (i));
+		assert (!!solidComponent && "Null pointer to solidComponent.");
+
+		unsigned j = 0;
+		bool isSolidComponentInRobot = false;
+		while (j < solidComponentRefVector.size ()
+				&& isSolidComponentInRobot == false)
+		{
+			CkppSolidComponentShPtr robotSolidComponent
+				= solidComponentRefVector[j]->referencedSolidComponent ();
+			assert (!!robotSolidComponent
+					&& "Null pointer to robot solid component.");
+			if (robotSolidComponent == solidComponent)
+			{
+				std::cout << "solid component " << i
+					<< " matches body in joint " << j << std::endl;
+				isSolidComponentInRobot = true;
+			}
+			++j;
+		}
+
+		CkwsDevice::TJointVector jointVector;
+		robot->getJointVector (jointVector);
+
+		if (!isSolidComponentInRobot && solidComponent->isActivated ())
+			for (unsigned j = 0; j < jointVector.size (); ++j)
+			{
+				std::cout << solidComponent->name () << std::endl;
+				std::cout << j << std::endl;
+
+				CkcdObjectShPtr object
+					= KIT_DYNAMIC_PTR_CAST (CkcdObject,
+							solidComponent);
+				assert (!!object && "Null pointer to object.");
+
+				assert (!!jointVector[j]->attachedBody ()
+						&& "Null pointer to attached body.");
+				CkwsKCDBodyShPtr body
+					= KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
+							jointVector[j]->attachedBody ());
+				assert (!!body && "Null pointer to body.");
+				std::vector<CkcdObjectShPtr> outerObjects = body->outerObjects ();
+				outerObjects.push_back (object);
+				body->outerObjects (outerObjects);
+			}
 	}
 
-      if (!isSolidComponentInRobot && solidComponent->isActivated ())
-	for (unsigned j = 0; j < solidComponentRefVector.size (); ++j)
-	  {
-	    CkcdObjectShPtr object
-	      = KIT_DYNAMIC_PTR_CAST (CkcdObject,
-				      solidComponent);
-
-	    CkwsDevice::TJointVector jointVector;
-	    robot->getJointVector (jointVector);
-
-	    CkwsKCDBodyShPtr body
-	      = KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
-				      jointVector[j]->attachedBody ());
-	    std::vector<CkcdObjectShPtr> outerObjects = body->outerObjects ();
-	    outerObjects.push_back (object);
-	    body->outerObjects (outerObjects);
-	}
-    }
+  std::cout << " done " << std::endl;
 
   // To avoid self-collision, add robot bodies as outer bodies. Here
   // we add all collision pairs. This is optional, and it may be nice
   // to find automatically which collision pairs should be taken into
   // consideration.
-  for (unsigned i = 0; i < solidComponentRefVector.size (); ++i)
-    {
-      CkppSolidComponentShPtr robotSolidComponent1
-	= solidComponentRefVector[i]->referencedSolidComponent ();
-      assert (!!robotSolidComponent1
-	      && "Null pointer to robot solid component 1.");
-      if (robotSolidComponent1->isActivated ())
-	{
-	  CkwsDevice::TJointVector jointVector;
-	  robot->getJointVector (jointVector);
-	  CkwsKCDBodyShPtr body
-	    = KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
-				    jointVector[i]->attachedBody ());
-	  std::vector<CkcdObjectShPtr> outerObjects = body->outerObjects ();
+  // for (unsigned i = 0; i < solidComponentRefVector.size (); ++i)
+  //   {
+  //     CkppSolidComponentShPtr robotSolidComponent1
+  // 	= solidComponentRefVector[i]->referencedSolidComponent ();
+  //     assert (!!robotSolidComponent1
+  // 	      && "Null pointer to robot solid component 1.");
+  //     if (robotSolidComponent1->isActivated ())
+  // 	{
+  // 	  CkwsDevice::TJointVector jointVector;
+  // 	  robot->getJointVector (jointVector);
+  // 	  CkwsKCDBodyShPtr body
+  // 	    = KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
+  // 				    jointVector[i]->attachedBody ());
+  // 	  std::vector<CkcdObjectShPtr> outerObjects = body->outerObjects ();
 
-	  for (unsigned j = i + 2; j < solidComponentRefVector.size (); ++j)
-	    {
-	      CkppSolidComponentShPtr robotSolidComponent
-		= solidComponentRefVector[j]->referencedSolidComponent ();
-	      assert (!!robotSolidComponent
-		      && "Null pointer to robot solid component.");
-	      if (robotSolidComponent->isActivated ())
-		{
-		  CkcdObjectShPtr robotObject
-		    = KIT_DYNAMIC_PTR_CAST (CkcdObject,
-					    robotSolidComponent);
-		  assert (!!robotObject
-			  && "Null pointer to robot object.");
-		  outerObjects.push_back (robotObject);
-		}
-	    }
+  // 	  for (unsigned j = i + 2; j < solidComponentRefVector.size (); ++j)
+  // 	    {
+  // 	      CkppSolidComponentShPtr robotSolidComponent
+  // 		= solidComponentRefVector[j]->referencedSolidComponent ();
+  // 	      assert (!!robotSolidComponent
+  // 		      && "Null pointer to robot solid component.");
+  // 	      if (robotSolidComponent->isActivated ())
+  // 		{
+  // 		  CkcdObjectShPtr robotObject
+  // 		    = KIT_DYNAMIC_PTR_CAST (CkcdObject,
+  // 					    robotSolidComponent);
+  // 		  assert (!!robotObject
+  // 			  && "Null pointer to robot object.");
+  // 		  outerObjects.push_back (robotObject);
+  // 		}
+  // 	    }
 
-	  body->outerObjects (outerObjects);
-	}
-    }
+  // 	  body->outerObjects (outerObjects);
+  // 	}
+  //   }
 
   // Print inner and outer objects for each joint of the robot.
   CkwsDevice::TJointVector jointVector;
@@ -226,6 +235,7 @@ BOOST_AUTO_TEST_CASE (plan)
       CkwsKCDBodyShPtr body
 	= KIT_DYNAMIC_PTR_CAST (CkwsKCDBody,
 				jointVector[i]->attachedBody ());
+      assert (!!body && "Null pointer to body.");
 
       std::vector<CkcdObjectShPtr> innerObjects = body->innerObjects ();
       std::vector<CkcdObjectShPtr> outerObjects = body->outerObjects ();
@@ -242,8 +252,8 @@ BOOST_AUTO_TEST_CASE (plan)
   CkwsConfig startConfig (robot);
   assert (robot->countDofs () == 6 && "Incorrect number of dofs, expected 6.");
   std::vector<double> startDofValues (6);
-  startDofValues[0] = 0.01;
-  startDofValues[1] = - M_PI / 2;
+  startDofValues[0] = 0.;
+  startDofValues[1] = 0.;
   startDofValues[2] = 0.;
   startDofValues[3] = 0.;
   startDofValues[4] = 0.;
@@ -255,12 +265,23 @@ BOOST_AUTO_TEST_CASE (plan)
   // Set target pose of the robot.
   CkwsConfig goalConfig (robot);
   std::vector<double> goalDofValues (6);
-  goalDofValues[0] = M_PI;
-  goalDofValues[1] = - M_PI / 2;
-  goalDofValues[2] = 0.;
-  goalDofValues[3] = 0.;
-  goalDofValues[4] = 0.;
-  goalDofValues[5] = 0.;
+
+	// interesting path for "test_planning_only_obstacles
+	goalDofValues[0] = 117. * M_PI / 180.; 
+  goalDofValues[1] = -31. * M_PI / 180.;  
+  goalDofValues[2] =  35. * M_PI / 180.;
+  goalDofValues[3] =   0. * M_PI / 180.; 
+  goalDofValues[4] =   0. * M_PI / 180.; 
+  goalDofValues[5] =   0. * M_PI / 180.; 
+
+//	goalDofValues[0] =   10. * M_PI / 180.; 
+//  goalDofValues[1] =   0. * M_PI / 180.;  
+//  goalDofValues[2] =   0. * M_PI / 180.;
+//  goalDofValues[3] =   0. * M_PI / 180.; 
+//  goalDofValues[4] =   0. * M_PI / 180.; 
+//  goalDofValues[5] =   0. * M_PI / 180.; 
+
+
   goalConfig.setDofValues (goalDofValues);
   assert (goalConfig.isValid () == true
 	  && "Goal configuration is not collision free, should be.");
@@ -278,7 +299,7 @@ BOOST_AUTO_TEST_CASE (plan)
   CkwsRoadmapShPtr roadmap = CkwsRoadmap::create (robot);
   CkwsDiffusingRdmBuilderShPtr roadmapBuilder
     = CkwsDiffusingRdmBuilder::create (roadmap);
-  roadmapBuilder->penetration (10.);
+  //roadmapBuilder->penetration (0.001);
   roadmapBuilder->diffuseFromProblemGoal (true);
 
   // Create initial path from start and goal configurations.
@@ -289,13 +310,36 @@ BOOST_AUTO_TEST_CASE (plan)
   assert (!!goalConfigShPtr && "Null pointer to goal config.");
   assert (!goalConfig.isEquivalent (startConfig)
 	  && "Goal and start config are equivalent, must be different.");
+	
+//	CkwsSMLinearShPtr a_class_that_i_need_to_create_simple_direct_paths_wtf;
+//	CkwsDirectPathShPtr direct_path = a_class_that_i_need_to_create_simple_direct_paths_wtf->makeDirectPath (*startConfigShPtr, *goalConfigShPtr);
+
   initPath->appendDirectPath (startConfigShPtr, goalConfigShPtr);
+//  initPath->appendDirectPath (direct_path);
 
   assert (!!initPath && "Null pointer to initial path.");
-  assert (initPath->countDirectPaths () == 1
+	if (initPath->countDirectPaths() != 1) {
+		std::cerr << "Wrong number of direct paths in initial path, expected 1 but was " << initPath->countDirectPaths() << std::endl;
+	  assert (initPath->countDirectPaths () == 1
   	  && "Wrong number of direct paths in initial path, expected 1.");
-  assert (initPath->validateWithPenetration (10.) == false
-	  && "Init path is not collliding, no point in planning.");
+	}
+
+	if (initPath->isValid()) {
+		std::cout << "Path is valid!" << std::endl;
+	}
+
+	std::cout << "max penetration = " << initPath->maxPenetration() << std::endl;
+
+	if (initPath->validateWithPenetration (0.001) == true) {
+ 		std::cout << "Init path validation successful!" << std::endl;
+	} else {
+ 		std::cout << "Init path validation failed!" << std::endl;
+	}
+
+	std::cout << "max penetration = " << initPath->maxPenetration() << std::endl;
+
+  // assert (initPath->validateWithPenetration (0.01) == false
+  // 	  && "Init path is not collliding, no point in planning.");
 
   // Plan collision-free path from start and goal configurations.
   std::cout << "Solving... " << std::endl;
@@ -321,7 +365,7 @@ BOOST_AUTO_TEST_CASE (plan)
   // Check for collisions on solution path. Penetration is a kind of
   // tolerance when checking for collisions. The lowest it is, the
   // safer the result, but the slower the validation.
-  assert (solutionPath->validateWithPenetration (10.) == true
+  assert (solutionPath->validateWithPenetration (0.001) == true
 	  && "Solution path is collliding, there is a problem.");
 
   // ----------------------------------------------------------------
@@ -350,7 +394,7 @@ BOOST_AUTO_TEST_CASE (plan)
       std::cout << std::endl;
     }
 
-  assert (optimizedPath->validateWithPenetration (10.) == true
+  assert (optimizedPath->validateWithPenetration (0.01) == true
 	  && "Solution path is collliding, there is a problem.");
 
   // ----------------------------------------------------------------
