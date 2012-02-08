@@ -151,8 +151,8 @@ BOOST_AUTO_TEST_CASE (plan)
 					&& "Null pointer to robot solid component.");
 			if (robotSolidComponent == solidComponent)
 			{
-				std::cout << "solid component " << i
-					<< " matches body in joint " << j << std::endl;
+				std::cout << "solid component '" << robotSolidComponent->name()
+					<< "' matches body in joint " << j << std::endl;
 				isSolidComponentInRobot = true;
 			}
 			++j;
@@ -164,8 +164,7 @@ BOOST_AUTO_TEST_CASE (plan)
 		if (!isSolidComponentInRobot && solidComponent->isActivated ())
 			for (unsigned j = 0; j < jointVector.size (); ++j)
 			{
-				std::cout << solidComponent->name () << std::endl;
-				std::cout << j << std::endl;
+				std::cout << "Adding solid (name = '" << solidComponent->name () << "') to joint index: " << j << std::endl;
 
 				CkcdObjectShPtr object
 					= KIT_DYNAMIC_PTR_CAST (CkcdObject,
@@ -253,13 +252,23 @@ BOOST_AUTO_TEST_CASE (plan)
   assert (robot->countDofs () == 6 && "Incorrect number of dofs, expected 6.");
   std::vector<double> startDofValues (6);
   startDofValues[0] = 0.;
-  startDofValues[1] = 0.;
+  startDofValues[1] = 0.69;
   startDofValues[2] = 0.;
   startDofValues[3] = 0.;
   startDofValues[4] = 0.;
   startDofValues[5] = 0.;
   startConfig.setDofValues (startDofValues);
-  assert (startConfig.isValid () == true
+
+	// Validation of start config
+	std::cout << "Validation of start config: ";
+	robot->configValidators()->validate(startConfig);
+	if (startConfig.isValid()) {
+		std::cout << "successful!" << std::endl;
+	} else {
+		std::cout << "failed!" << std::endl;
+	}
+ 
+	assert (startConfig.isValid () == true
 	  && "Start configuration is not collision free, should be.");
 
   // Set target pose of the robot.
@@ -281,12 +290,28 @@ BOOST_AUTO_TEST_CASE (plan)
 //  goalDofValues[4] =   0. * M_PI / 180.; 
 //  goalDofValues[5] =   0. * M_PI / 180.; 
 
+	goalDofValues[0] =   0. * M_PI / 180.; 
+  goalDofValues[1] =  -2. * M_PI / 180.;  
+  goalDofValues[2] =   0. * M_PI / 180.;
+  goalDofValues[3] =   0. * M_PI / 180.; 
+  goalDofValues[4] =   0. * M_PI / 180.; 
+  goalDofValues[5] =   0. * M_PI / 180.; 
 
   goalConfig.setDofValues (goalDofValues);
-  assert (goalConfig.isValid () == true
+
+	// Validation of end config 
+	std::cout << "Validation of goal config : ";
+	robot->configValidators()->validate(goalConfig);
+	if (goalConfig.isValid()) {
+		std::cout << "successful!" << std::endl;
+	} else {
+		std::cout << "failed!" << std::endl;
+	}
+ 
+	assert (goalConfig.isValid () == true
 	  && "Goal configuration is not collision free, should be.");
 
-  // ----------------------------------------------------------------
+ // ----------------------------------------------------------------
 
   // Create linear steering method. A direct path created with this
   // steering method uses linear interpolation to compute a
@@ -317,6 +342,23 @@ BOOST_AUTO_TEST_CASE (plan)
   initPath->appendDirectPath (startConfigShPtr, goalConfigShPtr);
 //  initPath->appendDirectPath (direct_path);
 
+	// trying to validate the path:
+	std::cout << "Validating init path: ";
+
+	CkwsValidatorSetShPtr validators = CkwsValidatorSet::createCopy(robot->directPathValidators());
+	assert (validators && !"no validators found!");
+	CkwsValidatorDPCollisionShPtr collisionValidator = validators->retrieve<CkwsValidatorDPCollision>();
+	assert (collisionValidator && !"no collision validator found!");
+	collisionValidator->penetration(0.001);
+
+	if (validators->validate (*initPath) == true) {
+		std::cout << "successful!" << std::endl;
+	} else {
+		std::cout << "failed!" << std::endl;
+	}
+
+	//robot->directPathValidators()->validate(initPath);
+
   assert (!!initPath && "Null pointer to initial path.");
 	if (initPath->countDirectPaths() != 1) {
 		std::cerr << "Wrong number of direct paths in initial path, expected 1 but was " << initPath->countDirectPaths() << std::endl;
@@ -324,13 +366,7 @@ BOOST_AUTO_TEST_CASE (plan)
   	  && "Wrong number of direct paths in initial path, expected 1.");
 	}
 
-	if (initPath->isValid()) {
-		std::cout << "Path is valid!" << std::endl;
-	}
-
-	std::cout << "max penetration = " << initPath->maxPenetration() << std::endl;
-
-	if (initPath->validateWithPenetration (0.001) == true) {
+	if (initPath->validateWithPenetration (1.0) == true) {
  		std::cout << "Init path validation successful!" << std::endl;
 	} else {
  		std::cout << "Init path validation failed!" << std::endl;
