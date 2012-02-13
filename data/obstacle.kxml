@@ -39,7 +39,6 @@
 					0 0 1 0
 					0 0 0 1
 				</RELATIVE_POSITION>
-				<ABSOLUTE_FILENAME>/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/build/unstable/orb-planner/tests/manipulateur.WRL</ABSOLUTE_FILENAME>
 				<RELATIVE_FILENAME>manipulateur.WRL</RELATIVE_FILENAME>
 				<ADDRESS>;1</ADDRESS>
 				<LOADING_OPTIONS/>
@@ -69,7 +68,6 @@
 					0 0 1 0
 					0 0 0 1
 				</RELATIVE_POSITION>
-				<ABSOLUTE_FILENAME>/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/build/unstable/orb-planner/tests/manipulateur.WRL</ABSOLUTE_FILENAME>
 				<RELATIVE_FILENAME>manipulateur.WRL</RELATIVE_FILENAME>
 				<ADDRESS>;2</ADDRESS>
 				<LOADING_OPTIONS/>
@@ -99,7 +97,6 @@
 					0 0 1 0
 					0 0 0 1
 				</RELATIVE_POSITION>
-				<ABSOLUTE_FILENAME>/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/build/unstable/orb-planner/tests/manipulateur.WRL</ABSOLUTE_FILENAME>
 				<RELATIVE_FILENAME>manipulateur.WRL</RELATIVE_FILENAME>
 				<ADDRESS>;3</ADDRESS>
 				<LOADING_OPTIONS/>
@@ -129,7 +126,6 @@
 					0 0 1 0
 					0 0 0 1
 				</RELATIVE_POSITION>
-				<ABSOLUTE_FILENAME>/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/build/unstable/orb-planner/tests/manipulateur.WRL</ABSOLUTE_FILENAME>
 				<RELATIVE_FILENAME>manipulateur.WRL</RELATIVE_FILENAME>
 				<ADDRESS>;4</ADDRESS>
 				<LOADING_OPTIONS/>
@@ -159,7 +155,6 @@
 					0 0 1 0
 					0 0 0 1
 				</RELATIVE_POSITION>
-				<ABSOLUTE_FILENAME>/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/build/unstable/orb-planner/tests/manipulateur.WRL</ABSOLUTE_FILENAME>
 				<RELATIVE_FILENAME>manipulateur.WRL</RELATIVE_FILENAME>
 				<ADDRESS>;5</ADDRESS>
 				<LOADING_OPTIONS/>
@@ -189,7 +184,6 @@
 					0 0 1 0
 					0 0 0 1
 				</RELATIVE_POSITION>
-				<ABSOLUTE_FILENAME>/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/build/unstable/orb-planner/tests/manipulateur.WRL</ABSOLUTE_FILENAME>
 				<RELATIVE_FILENAME>manipulateur.WRL</RELATIVE_FILENAME>
 				<ADDRESS>;6</ADDRESS>
 				<LOADING_OPTIONS/>
@@ -219,7 +213,6 @@
 					0 0 1 0
 					0 0 0 1
 				</RELATIVE_POSITION>
-				<ABSOLUTE_FILENAME>/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/build/unstable/orb-planner/tests/manipulateur.WRL</ABSOLUTE_FILENAME>
 				<RELATIVE_FILENAME>manipulateur.WRL</RELATIVE_FILENAME>
 				<ADDRESS>;7</ADDRESS>
 				<LOADING_OPTIONS/>
