@@ -43,6 +43,12 @@ using boost::test_tools::output_test_stream;
 #define KINEODEVICEBASE_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviceBased.so"
 #define KINEODEVICE_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviced.so"
 
+// Define path to the files that should be loaded
+#define ORB_PLANNER_DIR "/home/mfelis/local/src/orb-planner"
+
+#define ORB_PLANNER_ROBOT_FILE ORB_PLANNER_DIR"/data/KUKA_sixx850.kxml"
+#define ORB_PLANNER_OBSTACLE_FILE ORB_PLANNER_DIR"/data/test_planning_only_obstacles.kxml"
+
 // This is the main program.
 BOOST_AUTO_TEST_CASE (plan)
 {
@@ -85,7 +91,7 @@ BOOST_AUTO_TEST_CASE (plan)
   // ----------------------------------------------------------------
 
   // Load the environment.
-  std::string obstacleFilename ("./test_planning_only_obstacles.kxml");
+  std::string obstacleFilename (ORB_PLANNER_OBSTACLE_FILE);
 
   CkppModelTreeShPtr modelTree = CkppModelTree::create ();
 
@@ -97,7 +103,7 @@ BOOST_AUTO_TEST_CASE (plan)
   // ----------------------------------------------------------------
 
   // Load a robot in the same scene.
-  std::string robotFilename("./KUKA_sixx850.kxml");
+  std::string robotFilename(ORB_PLANNER_ROBOT_FILE);
 
   parseFile (robotFilename,
   	     parser,
@@ -252,7 +258,7 @@ BOOST_AUTO_TEST_CASE (plan)
   assert (robot->countDofs () == 6 && "Incorrect number of dofs, expected 6.");
   std::vector<double> startDofValues (6);
   startDofValues[0] = 0.;
-  startDofValues[1] = 0.69;
+  startDofValues[1] = - 90. * M_PI / 180.;
   startDofValues[2] = 0.;
   startDofValues[3] = 0.;
   startDofValues[4] = 0.;
@@ -263,9 +269,9 @@ BOOST_AUTO_TEST_CASE (plan)
 	std::cout << "Validation of start config: ";
 	robot->configValidators()->validate(startConfig);
 	if (startConfig.isValid()) {
-		std::cout << "successful!" << std::endl;
+		std::cout << "valid!" << std::endl;
 	} else {
-		std::cout << "failed!" << std::endl;
+		std::cout << "invalid!" << std::endl;
 	}
  
 	assert (startConfig.isValid () == true
@@ -275,14 +281,6 @@ BOOST_AUTO_TEST_CASE (plan)
   CkwsConfig goalConfig (robot);
   std::vector<double> goalDofValues (6);
 
-	// interesting path for "test_planning_only_obstacles
-	goalDofValues[0] = 117. * M_PI / 180.; 
-  goalDofValues[1] = -31. * M_PI / 180.;  
-  goalDofValues[2] =  35. * M_PI / 180.;
-  goalDofValues[3] =   0. * M_PI / 180.; 
-  goalDofValues[4] =   0. * M_PI / 180.; 
-  goalDofValues[5] =   0. * M_PI / 180.; 
-
 //	goalDofValues[0] =   10. * M_PI / 180.; 
 //  goalDofValues[1] =   0. * M_PI / 180.;  
 //  goalDofValues[2] =   0. * M_PI / 180.;
@@ -291,7 +289,7 @@ BOOST_AUTO_TEST_CASE (plan)
 //  goalDofValues[5] =   0. * M_PI / 180.; 
 
 	goalDofValues[0] =   0. * M_PI / 180.; 
-  goalDofValues[1] =  -2. * M_PI / 180.;  
+  goalDofValues[1] =  -0. * M_PI / 180.;
   goalDofValues[2] =   0. * M_PI / 180.;
   goalDofValues[3] =   0. * M_PI / 180.; 
   goalDofValues[4] =   0. * M_PI / 180.; 
@@ -303,13 +301,50 @@ BOOST_AUTO_TEST_CASE (plan)
 	std::cout << "Validation of goal config : ";
 	robot->configValidators()->validate(goalConfig);
 	if (goalConfig.isValid()) {
-		std::cout << "successful!" << std::endl;
+		std::cout << "valid!" << std::endl;
 	} else {
-		std::cout << "failed!" << std::endl;
+		std::cout << "invalid!" << std::endl;
 	}
  
 	assert (goalConfig.isValid () == true
 	  && "Goal configuration is not collision free, should be.");
+
+
+	// compute the intermediate state of the start and goal state and check
+	// for collision (we want to have one!)
+  
+	// Set target pose of the robot.
+  CkwsConfig midConfig (robot);
+  std::vector<double> midDofValues (6);
+
+	// interesting path for "test_planning_only_obstacles
+	midDofValues[0] = startDofValues[0] + 0.5 * (goalDofValues[0] - startDofValues[0]); 
+  midDofValues[1] = startDofValues[1] + 0.5 * (goalDofValues[1] - startDofValues[1]);  
+  midDofValues[2] = startDofValues[2] + 0.5 * (goalDofValues[2] - startDofValues[2]);
+  midDofValues[3] = startDofValues[3] + 0.5 * (goalDofValues[3] - startDofValues[3]); 
+  midDofValues[4] = startDofValues[4] + 0.5 * (goalDofValues[4] - startDofValues[4]); 
+  midDofValues[5] = startDofValues[5] + 0.5 * (goalDofValues[5] - startDofValues[5]); 
+
+	// std::cout << "midDofValues:\t";
+	// for (int i = 0; i < 6; i++) {
+	// 	std::cout << midDofValues[i] << "\t";
+	// }
+	// std::cout << std::endl;
+
+  midConfig.setDofValues (midDofValues);
+
+	// Validation of end config 
+	std::cout << "Validation of mid config  : ";
+	robot->configValidators()->validate(midConfig);
+	if (midConfig.isValid()) {
+		std::cout << "valid!" << std::endl;
+	} else {
+		std::cout << "invalid!" << std::endl;
+	}
+ 
+	assert (midConfig.isValid () == false
+	  && "Mid configuration is not in collision, but should be.");
+
 
  // ----------------------------------------------------------------
 
@@ -335,31 +370,10 @@ BOOST_AUTO_TEST_CASE (plan)
   assert (!!goalConfigShPtr && "Null pointer to goal config.");
   assert (!goalConfig.isEquivalent (startConfig)
 	  && "Goal and start config are equivalent, must be different.");
-	
-//	CkwsSMLinearShPtr a_class_that_i_need_to_create_simple_direct_paths_wtf;
-//	CkwsDirectPathShPtr direct_path = a_class_that_i_need_to_create_simple_direct_paths_wtf->makeDirectPath (*startConfigShPtr, *goalConfigShPtr);
 
   initPath->appendDirectPath (startConfigShPtr, goalConfigShPtr);
-//  initPath->appendDirectPath (direct_path);
 
-	// trying to validate the path:
-	std::cout << "Validating init path: ";
-
-	CkwsValidatorSetShPtr validators = CkwsValidatorSet::createCopy(robot->directPathValidators());
-	assert (validators && !"no validators found!");
-	CkwsValidatorDPCollisionShPtr collisionValidator = validators->retrieve<CkwsValidatorDPCollision>();
-	assert (collisionValidator && !"no collision validator found!");
-	collisionValidator->penetration(0.001);
-
-	if (validators->validate (*initPath) == true) {
-		std::cout << "successful!" << std::endl;
-	} else {
-		std::cout << "failed!" << std::endl;
-	}
-
-	//robot->directPathValidators()->validate(initPath);
-
-  assert (!!initPath && "Null pointer to initial path.");
+   assert (!!initPath && "Null pointer to initial path.");
 	if (initPath->countDirectPaths() != 1) {
 		std::cerr << "Wrong number of direct paths in initial path, expected 1 but was " << initPath->countDirectPaths() << std::endl;
 	  assert (initPath->countDirectPaths () == 1
