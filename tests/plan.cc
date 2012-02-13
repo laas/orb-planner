@@ -359,9 +359,15 @@ BOOST_AUTO_TEST_CASE (plan)
   CkwsRoadmapShPtr roadmap = CkwsRoadmap::create (robot);
   CkwsDiffusingRdmBuilderShPtr roadmapBuilder
     = CkwsDiffusingRdmBuilder::create (roadmap);
-  //roadmapBuilder->penetration (0.001);
   roadmapBuilder->diffuseFromProblemGoal (true);
 
+  // Set dynamic penetration used for path collision checking. It is
+  // set to 5m by default, we set it here to 1mm. The lower the value,
+  // the more confident is collision checking, but the slower it is.
+  double penetration = 1e-3;
+  robot->directPathValidators ()->retrieve<CkwsValidatorDPCollision> ()
+    ->penetration (penetration);
+  
   // Create initial path from start and goal configurations.
   CkwsPathShPtr initPath = CkwsPath::create (robot);
   CkwsConfigShPtr startConfigShPtr = CkwsConfig::create (startConfig);
@@ -380,13 +386,11 @@ BOOST_AUTO_TEST_CASE (plan)
   	  && "Wrong number of direct paths in initial path, expected 1.");
 	}
 
-	if (initPath->validateWithPenetration (1.0) == true) {
+	if (robot->pathValidators ()->validate (*initPath)) {
  		std::cout << "Init path validation successful!" << std::endl;
 	} else {
  		std::cout << "Init path validation failed!" << std::endl;
 	}
-
-	std::cout << "max penetration = " << initPath->maxPenetration() << std::endl;
 
   // assert (initPath->validateWithPenetration (0.01) == false
   // 	  && "Init path is not collliding, no point in planning.");
@@ -415,7 +419,7 @@ BOOST_AUTO_TEST_CASE (plan)
   // Check for collisions on solution path. Penetration is a kind of
   // tolerance when checking for collisions. The lowest it is, the
   // safer the result, but the slower the validation.
-  assert (solutionPath->validateWithPenetration (0.001) == true
+  assert (robot->pathValidators ()->validate (*solutionPath) == true
 	  && "Solution path is collliding, there is a problem.");
 
   // ----------------------------------------------------------------
@@ -444,7 +448,7 @@ BOOST_AUTO_TEST_CASE (plan)
       std::cout << std::endl;
     }
 
-  assert (optimizedPath->validateWithPenetration (0.01) == true
+assert (robot->pathValidators ()->validate (*optimizedPath) == true
 	  && "Solution path is collliding, there is a problem.");
 
   // ----------------------------------------------------------------
