@@ -28,6 +28,21 @@ void parseFile (const std::string& fileName,
 		const CkppComponentFactoryRegistryShPtr& registry,
 		CkppModelTreeShPtr& modelTree);
 
+/// \brief Print a component tree hierarchy starting from a root
+/// component.
+void printComponent (const CkppComponentShPtr& i_component,
+		     std::set<int> lastChildDepths = std::set<int> (),
+		     int depth = 0);
+
+/// \brief Parse a file a load path.
+///
+/// \param component device component referenced by path
+void loadPathFromFile (const std::string& fileName,
+		       const CkprParserManagerShPtr& parser,
+		       const CkppComponentFactoryRegistryShPtr& registry,
+		       const CkppComponentShPtr& component,
+		       CkwsPathShPtr& path);
+
 void parseFile (const std::string& fileName,
 		const CkprParserManagerShPtr& parser,
 		const CkppComponentFactoryRegistryShPtr& registry,
@@ -108,7 +123,7 @@ void parseFile (const std::string& fileName,
 	  modelTree->deviceNode ()->addChildComponent (deviceComponent);
 	}
     }
-  
+
   std::cout << "Retrieving path node..." << std::endl;
   if (parsedModelTree->pathNode ())
     {
@@ -163,12 +178,6 @@ void parseFile (const std::string& fileName,
     }
 }
 
-/// \brief Print a component tree hierarchy starting from a root
-/// component.
-void printComponent (const CkppComponentShPtr& i_component,
-		     std::set<int> lastChildDepths = std::set<int> (),
-		     int depth = 0);
-
 void printComponent (const CkppComponentShPtr& i_component,
 		     std::set<int> lastChildDepths,
 		     int depth)
@@ -193,4 +202,26 @@ void printComponent (const CkppComponentShPtr& i_component,
 		      depth + 1);
       lastChildDepths.erase (depth);
     }
+}
+
+void loadPathFromFile (const std::string& fileName,
+		       const CkprParserManagerShPtr& parser,
+		       const CkppComponentFactoryRegistryShPtr& registry,
+		       const CkppComponentShPtr& component,
+		       CkwsPathShPtr& path)
+{
+  CkprParserXMLSceneShPtr parserXMLScene
+    = parser->createXMLSceneParser ();
+
+  // Load path from file and link it to device component.
+  CkppPathComponentShPtr pathComponent;
+  if (KD_OK != parserXMLScene->loadPathFromFile (fileName, component, registry,
+						 pathComponent))
+    std::cerr << "ERROR: could not load path from file" << std::endl;
+  assert (!!pathComponent && "Null pointer to path component.");
+
+  // Return path from path component.
+  path = pathComponent->extractKwsPath (0, pathComponent
+					->countWaypointComponents () - 1);
+  assert (!!path && "Null pointer to path.");
 }
