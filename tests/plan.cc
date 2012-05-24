@@ -37,17 +37,17 @@ using boost::test_tools::output_test_stream;
 // Define where the device loading libraries are. Make sure you load
 // the correct ones (depending on whether you're using the release or
 // debug libraries).
-#define KINEO_INSTALL_DIR "/home/mfelis/local/robotpkg/kineo-2.06"
+#define KINEO_INSTALL_DIR "/home/shouzang/profiles/ubuntu-10.04/install/stable/kineo-2.06"
 
 #define KINEODEVICEPARSING_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviceParsingd.so"
 #define KINEODEVICEBASE_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviceBased.so"
 #define KINEODEVICE_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviced.so"
 
 // Define path to the files that should be loaded
-#define ORB_PLANNER_DIR "/home/mfelis/local/src/orb-planner"
+#define ORB_PLANNER_DIR "/home/shouzang/profiles/ubuntu-10.04/src/unstable/orb-planner"
 
-#define ORB_PLANNER_ROBOT_FILE ORB_PLANNER_DIR"/data/KUKA_sixx850.kxml"
-#define ORB_PLANNER_OBSTACLE_FILE ORB_PLANNER_DIR"/data/test_planning_only_obstacles.kxml"
+#define ORB_PLANNER_ROBOT_FILE ORB_PLANNER_DIR"/data/robot.kxml"
+#define ORB_PLANNER_OBSTACLE_FILE ORB_PLANNER_DIR"/data/obstacle.kxml"
 
 // This is the main program.
 BOOST_AUTO_TEST_CASE (plan)
@@ -95,15 +95,19 @@ BOOST_AUTO_TEST_CASE (plan)
 
   CkppModelTreeShPtr modelTree = CkppModelTree::create ();
 
+  std::cout << "Parsing obstacle start" << std::endl;
+
   parseFile (obstacleFilename,
   	     parser,
   	     registry,
   	     modelTree);
-
+  
   // ----------------------------------------------------------------
 
   // Load a robot in the same scene.
   std::string robotFilename(ORB_PLANNER_ROBOT_FILE);
+
+  std::cout << "Parsing robot start" << std::endl;
 
   parseFile (robotFilename,
   	     parser,

@@ -32,7 +32,7 @@ using boost::test_tools::output_test_stream;
 // Define where the device loading libraries are. Make sure you load
 // the correct ones (depending on whether you're using the release or
 // debug libraries).
-#define KINEO_INSTALL_DIR "/home/aelkhour/profiles/kitelab-2.06-i686-linux-ubuntu-10.04/install/stable/kineo-2.06"
+#define KINEO_INSTALL_DIR "/home/shouzang/profiles/ubuntu-10.04/install/stable/kineo-2.06"
 
 #define KINEODEVICEPARSING_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviceParsingd.so"
 #define KINEODEVICEBASE_SO KINEO_INSTALL_DIR"/bin/modulesd/KineoDeviceBased.so"
@@ -70,6 +70,8 @@ BOOST_AUTO_TEST_CASE (plan)
 
   // Create a parser manager.
   CkprParserManagerShPtr parser = CkprParserManager::defaultManager ();
+  std::cout << "TROLOLOLOLOLO parsing initialize" << std::endl;
+
 
   
   // ----------------------------------------------------------------
@@ -78,6 +80,8 @@ BOOST_AUTO_TEST_CASE (plan)
   CkppComponentShPtr robotModelTreeComponent;
   std::string
     robotFilename(KINEO_INSTALL_DIR"/share/demos/KPP-Device/BridgeDevice.kxml");
+  std::cout << "TROLOLOLOLOLO recupération bridge" << std::endl;
+
 
   if (parser->loadComponentFromFile (robotFilename,
 				     robotModelTreeComponent,
